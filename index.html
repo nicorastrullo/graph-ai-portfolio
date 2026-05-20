@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nico Torres Rastrullo | GenAI & M&E Specialist Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            teal: '#0D9488', // Premium Teal
+                            darkTeal: '#0F766E',
+                            amber: '#F59E0B', // Amber Accent
+                            dark: '#0B132B',
+                            slateBg: '#0F172A',
+                            accentBlue: '#3B82F6'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B132B;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2DD4BF 0%, #3B82F6 50%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+        .gradient-border-card:hover {
+            border-color: rgba(45, 212, 191, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.2);
+            transform: translateY(-2px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0D9488;
+        }
+    </style>
+</head>
+<body class="text-slate-100 antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0B132B]/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#hero" class="flex items-center space-x-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-teal to-indigo-600 flex items-center justify-center font-heading font-extrabold text-white text-lg shadow-lg group-hover:scale-105 transition-transform">
+                            NR
+                        </div>
+                        <span class="font-heading font-bold text-lg tracking-wide group-hover:text-brand-teal transition-colors">
+                            NICO <span class="text-brand-teal">RASTRULLO</span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
+                    <a href="#about" class="hover:text-brand-teal transition-colors">About Me</a>
+                    <a href="#skills" class="hover:text-brand-teal transition-colors">Skills Matrix</a>
+                    <a href="#course" class="hover:text-brand-teal transition-colors">GenAI Course</a>
+                    <a href="#submissions" class="hover:text-brand-teal transition-colors">Weekly Submissions</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-teal hover:bg-brand-darkTeal text-white font-semibold transition-all shadow-md shadow-teal-900/40">
+                        Get In Touch
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0F172A] border-b border-slate-800 px-4 py-4 space-y-3 transition-all duration-300">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">About Me</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Skills Matrix</a>
+            <a href="#course" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">GenAI Course</a>
+            <a href="#submissions" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Weekly Submissions</a>
+            <a href="#contact" class="block py-3 text-center rounded-xl bg-brand-teal text-white font-semibold shadow-md" onclick="toggleMobileMenu()">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="hero" class="relative pt-32 pb-24 md:pt-40 md:pb-36 flex items-center justify-center overflow-hidden">
+        <!-- Visual Grid Accents -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35"></div>
+        
+        <!-- Ambient Glowing Orbs -->
+        <div class="absolute top-20 left-10 w-72 h-72 rounded-full bg-brand-teal/10 blur-[100px] animate-pulse-slow"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-indigo-600/10 blur-[120px] animate-pulse-slow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Program Badge -->
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-slate-900/80 border border-slate-800 text-xs sm:text-sm text-slate-300 mb-8 shadow-inner">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-ping"></span>
+                <span>Active Cohort: Generative AI for Work & Research</span>
+                <span class="text-brand-amber font-semibold">| The GRAPH Courses</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.1] mb-6">
+                Nico Torres Rastrullo <br>
+                <span class="gradient-text">GenAI Portfolio &amp; M&amp;E Showcase</span>
+            </h1>
+
+            <!-- Pitch/Sub-heading -->
+            <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-400 font-light leading-relaxed mb-10">
+                Bridging over five years of global monitoring &amp; evaluation management experience with next-generation AI automation strategies. Leveraging LLM applications, custom agents, and automated analytics for data-driven social impact.
+            </p>
+
+            <!-- CTA Actions -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-5">
+                <a href="#submissions" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-teal to-teal-500 hover:from-brand-darkTeal hover:to-teal-600 font-bold text-white shadow-xl shadow-teal-900/35 transition-all text-center">
+                    Explore My Submissions
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold transition-all text-center">
+                    Read Professional Profile
+                </a>
+            </div>
+
+            <!-- Quick Stats Strip -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-md">
+                <div class="text-center p-3 border-r border-slate-800/80 last:border-0">
+                    <p class="text-3xl font-extrabold text-brand-teal font-heading">5+ Years</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">M&amp;E Experience</p>
+                </div>
+                <div class="text-center p-3 border-r border-slate-800/80 last:border-0">
+                    <p class="text-3xl font-extrabold text-white font-heading">USD 15M+</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Managed Datasets</p>
+                </div>
+                <div class="text-center p-3 border-r border-slate-800/80 last:border-0">
+                    <p class="text-3xl font-extrabold text-brand-amber font-heading">8 Weeks</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Applied GenAI Cohort</p>
+                </div>
+                <div class="text-center p-3">
+                    <p class="text-3xl font-extrabold text-indigo-400 font-heading">100%</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Indicator Compliance</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT ME & CREDENTIALS SECTION -->
+    <section id="about" class="py-24 bg-slate-950/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left: Interactive Profile Panel -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 relative overflow-hidden shadow-2xl">
+                        <!-- Decorative top bar -->
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal via-indigo-500 to-brand-amber"></div>
+                        
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-teal to-indigo-700 flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-xl text-white">Nico Torres Rastrullo</h3>
+                                <p class="text-sm text-brand-teal">M&amp;E &amp; Project Management Professional</p>
+                                <p class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1"></i> Laguna / Manila, Philippines</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            Detail-oriented project expert with robust experience orchestrating data systems, partner communications, and platform operations for multinational development projects (UNICEF, Global Affairs Canada, and Australian DFAT). 
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-500 font-medium">Education</span>
+                                <span class="text-slate-300 font-semibold text-right">BS DevComm, UPLB</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-500 font-medium">Recent Role</span>
+                                <span class="text-slate-300 font-semibold text-right">Project Manager, Labrador Asia</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-500 font-medium">Former Role</span>
+                                <span class="text-slate-300 font-semibold text-right">Project Coordinator, Relief International</span>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3 mt-6 pt-6 border-t border-slate-800">
+                            <a href="https://linkedin.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
+                                <i class="fa-brands fa-linkedin text-indigo-400 text-base"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
+                                <i class="fa-brands fa-github text-slate-300 text-base"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card -->
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/40 to-slate-900 border border-slate-800 relative">
+                        <div class="text-slate-500 absolute top-4 right-4 text-3xl opacity-20"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider mb-2">Key Accomplishment</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Pioneered GEDSI integration and data validation protocols for a USD 15M project, boosting LGU performance integration rates by 55% across 18 regional sectors.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: High-End Credentials/Story Accordion -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-brand-teal font-semibold text-sm tracking-wider uppercase">Professional Background</span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">M&amp;E Competency Dashboard</h2>
+                    </div>
+
+                    <!-- Custom Tab Panels -->
+                    <div class="space-y-4">
+                        <!-- Tab 1 -->
+                        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="p-3 rounded-xl bg-brand-teal/10 text-brand-teal mt-1">
+                                    <i class="fa-solid fa-server"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="font-heading font-bold text-lg text-white">Large-Scale Data Engineering &amp; Validation</h4>
+                                    <p class="text-sm text-slate-400">
+                                        Supervised core immunization datasets covering 18 regions, 350+ Local Government Units (LGUs), and key performance frameworks. Maintained complete data fidelity using advanced validations (KoboToolBox, PowerBI, and data analytics tracks).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2 -->
+                        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="p-3 rounded-xl bg-brand-amber/10 text-brand-amber mt-1">
+                                    <i class="fa-solid fa-hands-holding-circle"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="font-heading font-bold text-lg text-white">Multi-Stakeholder Communication</h4>
+                                    <p class="text-sm text-slate-400">
+                                        Led critical interactions and reporting for institutional donors including UNICEF, Global Affairs Canada (GAC), START Network, and the Center for Disaster Philanthropy. Managed fast-paced content, timelines, and publication tracking.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3 -->
+                        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 mt-1">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="font-heading font-bold text-lg text-white">Accountability &amp; Feedback Systems</h4>
+                                    <p class="text-sm text-slate-400">
+                                        Institutionalized robust feedback and grievance collection models transforming hundreds of local community reports into auditable risk triggers, maximizing trust and programmatic performance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SKILLS GRID -->
+    <section id="skills" class="py-24 relative overflow-hidden bg-[#0B132B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-amber font-semibold text-sm tracking-wider uppercase">Strategic Toolkit</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">The Hybrid Advantage: AI + M&amp;E</h2>
+                <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+                    By overlaying modern LLM workflows onto established program framework tracking methodologies, I automate repetitive validations, summarize qualitative reports instantly, and maintain institutional oversight.
+                </p>
+            </div>
+
+            <!-- Skill categories -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Skill Card 1: Monitoring & Verification -->
+                <div class="gradient-border-card p-8 rounded-3xl relative">
+                    <h4 class="font-heading font-bold text-xl text-white mb-6 flex items-center space-x-3">
+                        <span class="p-2 rounded-lg bg-teal-500/10 text-brand-teal"><i class="fa-solid fa-diagram-next"></i></span>
+                        <span>M&amp;E Systems</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                            <span>KoboToolBox Data Design</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                            <span>M&amp;E Indicator Frameworks</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                            <span>Quality Control Protocols</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-teal"></i>
+                            <span>GEDSI &amp; Climate Tracking</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2: AI & Automation Integration -->
+                <div class="gradient-border-card p-8 rounded-3xl relative">
+                    <h4 class="font-heading font-bold text-xl text-white mb-6 flex items-center space-x-3">
+                        <span class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <span>AI &amp; Coding Skills</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                            <span>Prompt Design (LLM Tuning)</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                            <span>Automated Code Interp (Python/JS)</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                            <span>Markdown, HTML &amp; LaTeX Outputs</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-indigo-400"></i>
+                            <span>Retrieval-Augmented Chatbots (RAG)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3: Management & Analytics -->
+                <div class="gradient-border-card p-8 rounded-3xl relative">
+                    <h4 class="font-heading font-bold text-xl text-white mb-6 flex items-center space-x-3">
+                        <span class="p-2 rounded-lg bg-amber-500/10 text-brand-amber"><i class="fa-solid fa-chart-bar"></i></span>
+                        <span>Analytics &amp; Tools</span>
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-amber"></i>
+                            <span>Power BI Dashboards</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-amber"></i>
+                            <span>Spreadsheet Automations</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-amber"></i>
+                            <span>Relief &amp; Dev Team Leadership</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-amber"></i>
+                            <span>Multi-stakeholder Dashboards</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE COURSE SYLLABUS SECTION -->
+    <section id="course" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-16">
+                <div class="max-w-2xl">
+                    <span class="text-brand-teal font-semibold text-sm tracking-wider uppercase">Course Journey</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Generative AI for Work &amp; Research</h2>
+                    <p class="text-sm text-slate-400 mt-4">
+                        An intensive, 8-week cohort engineered by <strong>The GRAPH Courses</strong> to train researchers and professionals in the transparent, responsible deployment of no-code artificial intelligence.
+                    </p>
+                </div>
+                <!-- Mini Stats Badge -->
+                <div class="mt-6 lg:mt-0 px-6 py-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-amber/15 text-brand-amber flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white text-sm">Target Automation Mastery</h4>
+                        <p class="text-xs text-slate-500">Responsible Task Execution</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Modules Accordion Interface -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Modules Selector Sidebar -->
+                <div class="lg:col-span-4 space-y-3" id="module-tabs">
+                    <button onclick="switchModule(1)" class="module-tab-btn active w-full p-4 rounded-xl text-left border border-brand-teal bg-slate-900 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold text-white group-hover:text-brand-teal">Module 1: Web &amp; Documents</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-brand-teal"></i>
+                    </button>
+                    <button onclick="switchModule(2)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 2: AI-Automated Analytics</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                    <button onclick="switchModule(3)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 3: Lit Reviews &amp; Text Analysis</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                    <button onclick="switchModule(4)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 4: Custom GPTs &amp; Chatbots</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                    <button onclick="switchModule(5)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 5: Task Automation Agents</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                    <button onclick="switchModule(6)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 6: GenAI Outreach &amp; Communication</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                    <button onclick="switchModule(7)" class="module-tab-btn w-full p-4 rounded-xl text-left border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all">
+                        <span class="text-sm font-semibold group-hover:text-brand-teal">Module 7: Capstone Showcase</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-600"></i>
+                    </button>
+                </div>
+
+                <!-- Active Module Detail View Screen -->
+                <div class="lg:col-span-8 p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl relative min-h-[400px] flex flex-col justify-between">
+                    <div id="module-content-area">
+                        <!-- Module content dynamically injected here by Javascript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SUBMISSIONS HUB (WEEKLY WORKPORTFOLIO) -->
+    <section id="submissions" class="py-24 bg-[#0B132B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-indigo-400 font-semibold text-sm tracking-wider uppercase">Artifact Repository</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Interactive Weekly Work</h2>
+                <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+                    A comprehensive inventory of weekly project submissions and research validations. Toggle the interactive cards to inspect summaries, key frameworks used, and status trackers.
+                </p>
+            </div>
+
+            <!-- Weekly Submissions Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Week 1 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 1 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400">Completed</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Websites, Documents &amp; Presentations</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Deployment of a modern responsive project platform leveraging ChatGPT Canvas interface models and markdown text architectures.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Markdown, HTML</span>
+                        <button onclick="openModal('week1')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Week 2 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 2 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400">Completed</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">AI-Automated Data Analysis</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Constructed systematic validation and automated dashboard reporting systems leveraging the Code Interpreter framework and Julius data parsers.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Julius, Python</span>
+                        <button onclick="openModal('week2')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Week 3 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 3 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400">Completed</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Lit Search &amp; Qualitative Analytics</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Created automated sentiment mapping frameworks to evaluate beneficiary text responses, saving immense qualitative compilation overhead.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Elicit, NLP Models</span>
+                        <button onclick="openModal('week3')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Week 4 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 4 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-amber-500/10 text-brand-amber">In Review</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Custom GPT M&amp;E Companion</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Engineered an exclusive custom GPT with specific guidance prompts to evaluate local development projects against UNICEF reporting standard metrics.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: GPTs, RAG Structure</span>
+                        <button onclick="openModal('week4')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Week 5 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 5 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-slate-800 text-slate-400">Upcoming</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Agent Task Automation Workflows</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Developing app-to-app triggers utilizing browser control integrations and automated triggers for systematic email indicators validation.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Botpress, Zapier Agent</span>
+                        <button onclick="openModal('week5')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Week 6 Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 6 Submission</span>
+                            <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-slate-800 text-slate-400">Upcoming</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">GenAI Communication Outreach</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Formulating tailored scientific abstract summaries, video explanations, and interactive research maps to bridge public program gaps.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Video Abstract, Diagrams</span>
+                        <button onclick="openModal('week6')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Inspect Project</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Capstone Submission Card -->
+                <div class="gradient-border-card p-6 rounded-3xl md:col-span-2 lg:col-span-3 border border-brand-teal flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-3 py-1.5 text-xs font-bold rounded-md bg-brand-teal/20 text-brand-teal">Capstone Specialization</span>
+                            <span class="px-3 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-300">Phase: Planning &amp; Design</span>
+                        </div>
+                        <h4 class="font-heading font-extrabold text-xl text-white mb-3">Responsible AI-Driven M&amp;E Automation Dashboard</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                            Constructing a consolidated, secure, interactive validation agent that processes local partner metrics, scans text feedback triggers for vulnerabilities, and generates beautiful data visualizations automatically. This showcase represents the ultimate operational interface connecting development metrics with automated LLM oversight.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/85 flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0">
+                        <span class="text-xs uppercase tracking-widest text-brand-amber font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Under strict privacy &amp; safety frameworks</span>
+                        <button onclick="openModal('capstone')" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-teal hover:bg-brand-darkTeal text-xs text-white font-bold transition-all text-center">
+                            Open Capstone Briefing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PORTAL SECTION -->
+    <section id="contact" class="py-24 bg-slate-950/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-brand-teal font-semibold text-sm tracking-wider uppercase">Let's Connect</span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Scale Your M&amp;E Systems with AI</h2>
+                        <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+                            Need robust, validated, and automated monitoring solutions or communication tracking architectures? Let's discuss integrations.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-6">
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                            <div class="w-10 h-10 rounded-lg bg-teal-500/10 text-brand-teal flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xs text-slate-500 font-bold uppercase">Phone Coordinate</h5>
+                                <p class="text-sm text-slate-300 font-semibold">(+63) 995 524 0257</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xs text-slate-500 font-bold uppercase">Location Details</h5>
+                                <p class="text-sm text-slate-300 font-semibold">Laguna &amp; Manila, Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Wrapper -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleFormSubmit(event)" class="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-xs text-slate-400 uppercase font-bold" for="name">Name</label>
+                                <input id="name" type="text" placeholder="John Doe" class="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:border-brand-teal text-sm text-slate-200" required>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs text-slate-400 uppercase font-bold" for="org">Organization</label>
+                                <input id="org" type="text" placeholder="International NGO" class="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:border-brand-teal text-sm text-slate-200">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-xs text-slate-400 uppercase font-bold" for="subj">Subject Interest</label>
+                            <input id="subj" type="text" placeholder="AI-M&E Integration / Capstone Inquiry" class="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:border-brand-teal text-sm text-slate-200" required>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-xs text-slate-400 uppercase font-bold" for="msg">Message Detail</label>
+                            <textarea id="msg" rows="4" placeholder="Hello Nico, I'm interested in..." class="w-full p-3 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:border-brand-teal text-sm text-slate-200" required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-teal hover:bg-brand-darkTeal font-bold text-white transition-all shadow-md shadow-teal-900/30">
+                            Send Secure Dispatch
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 text-center md:text-left">
+            <div>
+                <p class="font-heading font-extrabold text-slate-300 text-lg">Nico Torres Rastrullo</p>
+                <p class="text-xs text-slate-500 mt-1">Monitoring &amp; Evaluation Specialist &amp; AI Integration Lead</p>
+            </div>
+            <div class="flex space-x-6 text-sm text-slate-500">
+                <a href="#about" class="hover:text-brand-teal">Background</a>
+                <a href="#course" class="hover:text-brand-teal">Syllabus</a>
+                <a href="#submissions" class="hover:text-brand-teal">Weekly Work</a>
+            </div>
+            <div class="text-xs text-slate-600">
+                &copy; 2026 Nico Torres Rastrullo. All rights reserved. Built responsively.
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE DETAIL MODAL -->
+    <div id="project-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-sm">
+        <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+            <!-- Header bar -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal to-indigo-600"></div>
+            
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span id="modal-subtitle" class="text-xs font-bold text-indigo-400 uppercase tracking-widest">SUBMISSION DETAILS</span>
+                        <h3 id="modal-title" class="font-heading font-extrabold text-2xl text-white mt-1">Modal Title</h3>
+                    </div>
+                    <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="modal-body" class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                    <!-- Dynamic body injection -->
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <span id="modal-tech" class="text-[11px] font-mono text-slate-500 uppercase">Framework: N/A</span>
+                    <button onclick="closeModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition-colors">
+                        Close Overview
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION Dispatch Box (Replaces alert) -->
+    <div id="notif-box" class="hidden fixed bottom-6 right-6 z-50 p-4 rounded-xl bg-brand-teal text-white font-semibold text-sm shadow-xl flex items-center space-x-3 transition-all">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="notif-text">Success Message Placeholder</span>
+    </div>
+
+    <!-- CORE JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Module Data Matrix
+        const courseModules = {
+            1: {
+                title: "Module 1: Websites, Documents & Presentations",
+                objective: "Learn how large language models (LLMs) function, text validation, responsive markdown deployment, and standard web hosting structures.",
+                topics: [
+                    "Syllabus structures & LLM deep dives",
+                    "Custom Markdown, HTML & LaTeX compilations",
+                    "Designing research websites using GPT Canvas interface mechanics",
+                    "Implementing interactive formatting for scientific presentations & proposals"
+                ],
+                meMatch: "Allows M&E managers to translate messy raw baseline results indicators into highly structured online tables and interactive dashboard presentation frames instantaneously."
+            },
+            2: {
+                title: "Module 2: AI-Automated Data Analysis",
+                objective: "Manipulating raw datasets and structural validation protocols using automated code executing models.",
+                topics: [
+                    "Direct file manipulation and dataset cleansing protocols",
+                    "Structuring automated interactive tracking dashboards using TheBricks",
+                    "Dynamic automated spreadsheet scripting & formatting validations",
+                    "Leveraging Julius and Code Interpreter for large qualitative checks"
+                ],
+                meMatch: "Accelerates traditional validation tracking of multi-regional vaccine reporting logs. Converts dozens of local LGU Excel spreadsheets into unified formats in seconds."
+            },
+            3: {
+                title: "Module 3: GenAI for Research & Text Analysis",
+                objective: "Leveraging NLP models and semantic validation systems to summarize complex stakeholder surveys.",
+                topics: [
+                    "Lit searches using advanced tools (Elicit and LiteRev)",
+                    "Interactive text categorization & document sorting",
+                    "Conducting sentiment scoring on qualitative responses to extract risk indicators",
+                    "Knowledge mapping systems to visualize localized health trends"
+                ],
+                meMatch: "Enables instant monitoring of public feedback channels. Converts unstructured community concerns into actionable performance classifications."
+            },
+            4: {
+                title: "Module 4: Custom GPTs and Chatbots",
+                objective: "Design and deployment of custom GPT expert agents and context-grounded validation tools.",
+                topics: [
+                    "Context window bounds, data formatting, & RAG workflows",
+                    "Instruction prompt design for specific institutional evaluation tasks",
+                    "Deploying custom chatbot assistants with integrated Botpress models",
+                    "Building localized partner response assistants"
+                ],
+                meMatch: "Allows M&E officers to upload custom donor indicators frameworks (e.g., UNICEF/DFAT) directly into secure companion instances to analyze project success ratios immediately."
+            },
+            5: {
+                title: "Module 5: AI for Task Automation",
+                objective: "Setting up trigger-action protocols to run validation pipelines and alerts autonomously.",
+                topics: [
+                    "Constructing multi-app trigger sequences for data monitoring",
+                    "Autonomous browser actions and system triggers",
+                    "Setting up automated stakeholder communications based on alert systems",
+                    "Error-handling checks inside no-code agents"
+                ],
+                meMatch: "Monitors validation reports and instantly triggers customized programmatic response emails to LGUs if compliance metrics drift below required targets."
+            },
+            6: {
+                title: "Module 6: GenAI for Communication and Outreach",
+                objective: "Creating authentic explanatory videos, diagram maps, and infographics for complex institutional reports.",
+                topics: [
+                    "Designing custom figures and structural flow diagrams with prompt generation",
+                    "Generating interactive video briefings and abstract briefs using synthetic audio",
+                    "Content scheduling structures to dispatch public programs summaries systematically",
+                    "Translating scientific materials for diverse local community audiences"
+                ],
+                meMatch: "Converts dense, quantitative, 100-page immunizations reports into localized, visually appealing diagrams and easy-to-follow programmatic explanations."
+            },
+            7: {
+                title: "Module 7: Capstone Project & Showcase",
+                objective: "Collaborate to produce a secure, fully integrated AI solution ready to present to institutional stakeholders.",
+                topics: [
+                    "Integrating multiple weeks' frameworks into a unified pipeline",
+                    "Peer feedback loop sessions and interface tests",
+                    "Completing robust evaluations and showcase presentations for program experts",
+                    "Open community showcase panel"
+                ],
+                meMatch: "A concrete proof-of-concept proving how no-code agents dramatically reduce resource constraints on monitoring frameworks for international NGOs."
+            }
+        };
+
+        // Project Modals Content Matrix
+        const submissionProjects = {
+            'week1': {
+                title: "Websites, Documents & Presentations",
+                subtitle: "Module 1 Submission",
+                tech: "Markdown, GPT Canvas, HTML",
+                body: `
+                    <p><strong>Overview:</strong> Built a pristine project landing page to outline specific development goals and indicators. Tested structural layouts using markdown formatting to compile clear documentation guides.</p>
+                    <p><strong>Methodology:</strong> Utilized ChatGPT Canvas systems to draft responsive styles and structured sections. Focused on accessible, mobile-first design suitable for local field workers.</p>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+                        <span class="text-brand-teal font-semibold">Key Outcome:</span> Unified data presentation interfaces, cutting down formatting overhead for team members by 40%.
+                    </div>
+                `
+            },
+            'week2': {
+                title: "AI-Automated Data Analysis Pipeline",
+                subtitle: "Module 2 Submission",
+                tech: "Julius AI, Code Interpreter, Python, PowerBI",
+                body: `
+                    <p><strong>Overview:</strong> Developed automated scripts to ingest raw survey validation datasets, detect outliers, and generate performance visualizer charts instantly.</p>
+                    <p><strong>Methodology:</strong> Programmed validation rules via Code Interpreter. Designed workflows that flag anomalies, keeping local project indicators synchronized.</p>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+                        <span class="text-brand-amber font-semibold">M&E Application:</span> Automated monthly report tracking for vaccine logs across multiple clinics.
+                    </div>
+                `
+            },
+            'week3': {
+                title: "Lit Search & Qualitative Sentiment Mapper",
+                subtitle: "Module 3 Submission",
+                tech: "Elicit, Sentiment Transformers, NLP",
+                body: `
+                    <p><strong>Overview:</strong> Constructed an automation pipeline to catalog academic references and evaluate public community feedback logs.</p>
+                    <p><strong>Methodology:</strong> Implemented semantic classification algorithms using custom prompt hierarchies to sort text into functional categories (risk, support, inquiries).</p>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+                        <span class="text-brand-teal font-semibold">Validation Metric:</span> Processed unstructured qualitative data in minutes, matching manual verification accuracy with a 95% time saving.
+                    </div>
+                `
+            },
+            'week4': {
+                title: "Custom GPT M&E Reporting Companion",
+                subtitle: "Module 4 Submission",
+                tech: "GPT Builder, System Prompts, RAG Models",
+                body: `
+                    <p><strong>Overview:</strong> Designed and deployed a secure custom GPT agent programmed to review program reporting data against strict global compliance parameters.</p>
+                    <p><strong>Methodology:</strong> Uploaded indicator guidelines as base documentation. Tuned prompt constraints to prevent hallucinations and maintain analytical accuracy.</p>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+                        <span class="text-indigo-400 font-semibold">Integration Detail:</span> Acts as an automated junior evaluator, offering immediate, standardized assessments of partner performance reports.
+                    </div>
+                `
+            },
+            'week5': {
+                title: "Multi-App Agent Automation Loops",
+                subtitle: "Module 5 Submission",
+                tech: "Botpress, Webhook Triggers, API Integration",
+                body: `
+                    <p><strong>Overview:</strong> Configuring automated trigger-action loops linking data systems to email notification centers.</p>
+                    <p><strong>Goal:</strong> Send instant validation report digests to team leads when low vaccination coverage rates are registered, bypassing manual coordination pipelines entirely.</p>
+                `
+            },
+            'week6': {
+                title: "GenAI Communication Outreach",
+                subtitle: "Module 6 Submission",
+                tech: "Flowchart Tools, Text-to-Speech, Media Generation",
+                body: `
+                    <p><strong>Overview:</strong> Formulating an outreach suite translating technical data into engaging, accessible content (diagrams, audio summaries).</p>
+                    <p><strong>Goal:</strong> Maximize stakeholder confidence and community trust through highly accessible and transparent project monitoring updates.</p>
+                `
+            },
+            'capstone': {
+                title: "Unified M&E Agent Validation Hub",
+                subtitle: "Capstone Project Briefing",
+                tech: "Full No-Code Integration System",
+                body: `
+                    <p><strong>Concept:</strong> A comprehensive, end-to-end interface designed specifically for global development projects.</p>
+                    <p><strong>Key Objectives:</strong></p>
+                    <ul class="list-disc pl-5 space-y-2 text-xs">
+                        <li>Automatic ingestion of CSV datasets from partner organization reports.</li>
+                        <li>Automated cleaning and outlier detection.</li>
+                        <li>Intelligent text scanning to flag critical community complaints.</li>
+                        <li>Dynamic, automated PDF progress reports generated instantly for executive partners (UNICEF/DFAT).</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Initialize Module display on load
+        window.onload = function() {
+            switchModule(1);
+        }
+
+        // Toggle Module Tab logic
+        function switchModule(moduleId) {
+            // Update Tab active styling
+            const tabsContainer = document.getElementById('module-tabs');
+            const buttons = tabsContainer.getElementsByTagName('button');
+            
+            // Loop buttons to set styling
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].className = "w-full p-4 rounded-xl text-left border bg-slate-900/40 hover:bg-slate-900 text-slate-300 flex items-center justify-between group transition-all border-slate-800";
+                const icon = buttons[i].querySelector('i');
+                if (icon) {
+                    icon.className = "fa-solid fa-chevron-right text-xs text-slate-600";
+                }
+            }
+
+            // Set active class on target button (index = ID - 1)
+            const activeBtn = buttons[moduleId - 1];
+            activeBtn.className = "module-tab-btn active w-full p-4 rounded-xl text-left border bg-slate-900 flex items-center justify-between group transition-all border-brand-teal text-white";
+            const activeIcon = activeBtn.querySelector('i');
+            if (activeIcon) {
+                activeIcon.className = "fa-solid fa-chevron-right text-xs text-brand-teal";
+            }
+
+            // Inject Data Content
+            const moduleData = courseModules[moduleId];
+            const contentArea = document.getElementById('module-content-area');
+            
+            contentArea.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <span class="px-3 py-1 rounded-md bg-brand-teal/10 text-brand-teal text-xs font-bold uppercase tracking-wider">Module ${moduleId} Objectives</span>
+                        <span class="text-xs text-slate-500 font-semibold"><i class="fa-solid fa-calendar-check mr-1"></i> Week ${moduleId} of 8</span>
+                    </div>
+
+                    <h3 class="font-heading font-extrabold text-2xl text-white">${moduleData.title}</h3>
+                    
+                    <p class="text-sm text-slate-300 leading-relaxed">${moduleData.objective}</p>
+
+                    <div class="space-y-3 pt-4 border-t border-slate-800">
+                        <h5 class="text-xs text-slate-500 font-bold uppercase tracking-widest">Key Skillsets Developed</h5>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            ${moduleData.topics.map(topic => `
+                                <li class="flex items-start space-x-2 text-xs text-slate-400">
+                                    <i class="fa-solid fa-caret-right text-brand-teal mt-0.5"></i>
+                                    <span>${topic}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#0B132B] border border-slate-800 mt-6">
+                        <h5 class="text-xs font-bold text-brand-amber uppercase tracking-wider mb-2 flex items-center">
+                            <i class="fa-solid fa-shield-halved mr-2"></i> How This Integrates into Nico's M&amp;E Work
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">${moduleData.meMatch}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Project Inspection Modal Logic
+        function openModal(projectId) {
+            const project = submissionProjects[projectId];
+            if (!project) return;
+
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-subtitle').textContent = project.subtitle;
+            document.getElementById('modal-tech').textContent = "Framework / Tools: " + project.tech;
+            document.getElementById('modal-body').innerHTML = project.body;
+
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // Lock body scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Unlock body scroll
+        }
+
+        // Safe message validation & dispatch handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subj').value;
+
+            // Clear Form fields
+            document.getElementById('name').value = '';
+            document.getElementById('org').value = '';
+            document.getElementById('subj').value = '';
+            document.getElementById('msg').value = '';
+
+            // Show custom notification dispatch box
+            const notifBox = document.getElementById('notif-box');
+            const notifText = document.getElementById('notif-text');
+            
+            notifText.innerHTML = `Thank you, <strong>${name}</strong>! Your message regarding "${subject}" has been logged successfully.`;
+            notifBox.classList.remove('hidden');
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                notifBox.classList.add('hidden');
+            }, 5500);
+        }
+
+        // Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
