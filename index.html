@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for professional icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Plotly.js for interactive visualizations -->
+    <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+    <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.1.min.js" integrity="sha256-4rD3fugVb/nVJYUv5Ky3v+fYXoouHaBSP20WIJuEiWg=" crossorigin="anonymous"></script>
     
     <script>
         tailwind.config = {
@@ -231,24 +234,24 @@
                         <div class="space-y-4 pt-4 border-t border-slate-800">
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-slate-500 font-medium">Education</span>
-                                <span class="text-slate-300 font-semibold text-right">BS Development Communication,<br>University of the Philippines</span>
+                                <span class="text-slate-300 font-semibold text-right">BS DevComm, University of the Philippines</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-slate-500 font-medium">Recent Role</span>
-                                <span class="text-slate-300 font-semibold text-right">Project Manager,<br>Labrador Transparency Asia</span>
+                                <span class="text-slate-300 font-semibold text-right">Project Manager, Labrador Asia</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-slate-500 font-medium">Former Role</span>
-                                <span class="text-slate-300 font-semibold text-right">Project Coordinator for M&E,<br>Relief International</span>
+                                <span class="text-slate-300 font-semibold text-right">Project Coordinator, Relief International</span>
                             </div>
                         </div>
 
                         <div class="flex space-x-3 mt-6 pt-6 border-t border-slate-800">
-                            <a href="https://linkedin.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
+                            <a href="https://www.linkedin.com/in/nicorastrullo/" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
                                 <i class="fa-brands fa-linkedin text-indigo-400 text-base"></i>
                                 <span>LinkedIn</span>
                             </a>
-                            <a href="https://github.com" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
+                            <a href="https://github.com/nicorastrullo" target="_blank" class="flex-1 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-300 transition-colors flex items-center justify-center space-x-2">
                                 <i class="fa-brands fa-github text-slate-300 text-base"></i>
                                 <span>GitHub</span>
                             </a>
@@ -526,7 +529,7 @@
                 </div>
 
                 <!-- Week 2 Submission Card -->
-                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between border border-brand-teal/30">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 2 Submission</span>
@@ -538,7 +541,7 @@
                         </p>
                     </div>
                     <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Julius, Python</span>
+                        <span class="text-[11px] uppercase tracking-wider text-brand-teal font-semibold">Plotly.js Visualizations</span>
                         <button onclick="openModal('week2')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
                             <span>Inspect Project</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -600,7 +603,7 @@
                             Developing app-to-app triggers utilizing browser control integrations and automated triggers for systematic email indicators validation.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                    <div class="pt-4 border-t border-slate-800/85 flex items-center justify-between">
                         <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Botpress, Zapier Agent</span>
                         <button onclick="openModal('week5')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
                             <span>Inspect Project</span>
@@ -674,7 +677,7 @@
                             </div>
                             <div>
                                 <h5 class="text-xs text-slate-500 font-bold uppercase">Phone Number</h5>
-                                <p class="text-sm text-slate-300 font-semibold">(+63) 995 524 0257</p>
+                                <p class="text-sm text-slate-300 font-semibold">((+63) 995 524 0257)</p>
                             </div>
                         </div>
 
@@ -743,7 +746,7 @@
 
     <!-- INTERACTIVE DETAIL MODAL -->
     <div id="project-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-sm">
-        <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+        <div id="modal-container-element" class="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300">
             <!-- Header bar -->
             <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal to-indigo-600"></div>
             
@@ -861,6 +864,66 @@
             }
         };
 
+        // Plotly Graph Data Matrix for Week 2 Map Visualization (Tab 1)
+        const plotlyData = [{"coloraxis":"coloraxis","customdata":[["AFG",64.6],["AGO",62.8],["ALB",77.4],["AND",82.7],["ARE",79.5],["ARG",76.4],["ARM",70.7],["ATG",77.3],["AUS",83.8],["AUT",81.3],["AZE",70.1],["BDI",61.2],["BEL",80.4],["BEN",65.1],["BFA",67.2],["BGD",69.6],["BGR",74.2],["BHR",76.1],["BHS",71.2],["BIH",75.8],["BLR",74.2],["BLZ",73.2],["BOL",63.8],["BRA",75.2],["BRB",76.5],["BRN",78.0],["BTN",72.3],["BWA",69.0],["CAF",53.8],["CAN",81.6],["CHE",83.1],["CHL",79.4],["CHN",80.7],["CIV",63.1],["CMR",60.2],["COD",59.6],["COG",62.7],["COL",77.5],["COM",74.3],["CPV",73.3],["CRI",79.4],["CUB",77.8],["CYP",80.1],["CZE",78.3],["DEU",81.0],["DJI",67.0],["DMA",75.3],["DNK",81.5],["DOM",72.0],["DZA",74.7],["ECU",73.7],["EGY",69.1],["ERI",62.1],["ESP",82.1],["EST",78.5],["ETH",63.7],["FIN",81.9],["FJI",68.0],["FRA",82.3],["FSM",66.3],["GAB",65.4],["GBR",80.4],["GEO",73.2],["GHA",64.3],["GIN",61.1],["GMB",64.4],["GNB",59.3],["GNQ",60.1],["GRC",81.2],["GRD",74.6],["GTM",71.2],["GUY",69.6],["HND",72.6],["HRV",77.7],["HTI",61.6],["HUN",75.7],["IDN",71.4],["IND",70.3],["IRL",82.2],["IRN",74.2],["IRQ",67.5],["ISL",82.7],["ISR",83.0],["ITA",82.0],["JAM",74.5],["JOR",75.3],["JPN",84.8],["KAZ",71.7],["KEN",66.6],["KGZ",71.6],["KHM",73.4],["KIR",70.5],["KNA",74.1],["KOR",83.5],["KWT",78.6],["LAO",66.2],["LBN",72.9],["LBR",58.2],["LBY",72.2],["LCA",76.7],["LIE",82.0],["LKA",78.2],["LSO",56.3],["LTU",75.2],["LUX",82.5],["LVA",75.8],["MAR",71.6],["MCO",79.6],["MDA",73.1],["MDG",61.6],["MDV",76.0],["MEX",71.4],["MHL",63.7],["MKD",74.6],["MLI",61.3],["MLT",82.2],["MMR",65.8],["MNE",75.2],["MNG",72.6],["MOZ",62.8],["MRT",66.1],["MUS",74.6],["MWI",61.2],["MYS",76.6],["NAM",64.2],["NER",57.5],["NGA",63.0],["NIC",71.9],["NLD",81.2],["NOR",83.1],["NPL",72.2],["NRU",58.4],["NZL",82.3],["OMN",73.5],["PAK",66.8],["PAN",76.7],["PER",72.4],["PHL",71.7],["PLW",68.3],["PNG",66.5],["POL",76.7],["PRK",73.6],["PRT",81.4],["PRY",72.4],["PSE",76.0],["QAT",80.5],["ROU",74.3],["RUS",72.0],["RWA",63.7],["SAU",72.4],["SDN",67.6],["SEN",68.4],["SGP",85.7],["SLB",63.6],["SLE",57.3],["SLV",71.3],["SMR",84.0],["SOM",63.0],["SRB",74.7],["SSD",55.8],["STP",67.0],["SUR",72.2],["SVK",76.9],["SVN",80.4],["SWE",82.4],["SWZ",57.0],["SYC",75.8],["SYR",74.4],["TCD",56.5],["TGO",63.4],["THA",77.8],["TJK",71.9],["TKM",69.1],["TLS",69.3],["TON",71.6],["TTO",72.8],["TUN",72.7],["TUR",76.2],["TUV",63.1],["TZA",67.2],["UGA",64.6],["UKR",72.3],["URY",77.9],["USA",77.1],["UZB",71.2],["VCT",74.2],["VEN",71.8],["VNM",75.9],["VUT",69.8],["WSM",72.5],["YEM",67.9],["ZAF",64.4],["ZMB",59.2],["ZWE",63.5]],"geo":"geo","hovertemplate":"<b>%{hovertext}</b><br><br>iso3=%{customdata[0]}<br>Life expectancy (years)=%{z:.1f}<extra></extra>","hovertext":["Afghanistan","Angola","Albania","Andorra","UAE","Argentina","Armenia","Antigua and Barbuda","Australia","Austria","Azerbaijan","Burundi","Belgium","Benin","Burkina Faso","Bangladesh","Bulgaria","Bahrain","Bahamas","Bosnia and Herzegovina","Belarus","Belize","Bolivia","Brazil","Barbados","Brunei","Bhutan","Botswana","Central African Republic","Canada","Switzerland","Chile","China","Cote d'Ivoire","Cameroon","Congo, Dem. Rep.","Congo, Rep.","Colombia","Comoros","Cape Verde","Costa Rica","Cuba","Cyprus","Czech Republic","Germany","Djibouti","Dominica","Denmark","Dominican Republic","Algeria","Ecuador","Egypt","Eritrea","Spain","Estonia","Ethiopia","Finland","Fiji","France","Micronesia, Fed. Sts.","Gabon","UK","Georgia","Ghana","GUID","GMB","GNB","GNQ","Greece","Grenada","Guatemala","Guyana","Honduras","Croatia","Haiti","Hungary","Indonesia","India","Ireland","Iran","Iraq","Iceland","Israel","Italy","Jamaica","Jordan","Japan","Kazakhstan","Kenya","Kyrgyz Republic","Cambodia","Kiribati","St. Kitts and Nevis","South Korea","Kuwait","Lao","Lebanon","Liberia","Libya","St. Lucia","Liechtenstein","Sri Lanka","Lesotho","Lithuania","Luxembourg","Latvia","Morocco","Monaco","Moldova","Madagascar","Maldives","Mexico","Marshall Islands","North Macedonia","Mali","Malta","Myanmar","Montenegro","Mongolia","Mozambique","Mauritania","Mauritius","Malawi","Malaysia","Namibia","Niger","Nigeria","Nicaragua","Netherlands","Norway","Nepal","Nauru","New Zealand","Oman","Pakistan","Panama","Peru","Philippines","Palau","Papua New Guinea","Poland","North Korea","Portugal","Paraguay","Palestine","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Sudan","Senegal","Singapore","Solomon Islands","Sierra Leone","El Salvador","San Marino","Somalia","Serbia","South Sudan","Sao Tome and Principe","Suriname","Slovak Republic","Slovenia","Sweden","Eswatini","Seychelles","Syria","Chad","Togo","Thailand","Tajikistan","Turkmenistan","Timor-Leste","Tonga","Trinidad and Tobago","Tunisia","Turkey","Tuvalu","Tanzania","Uganda","Ukraine","Uruguay","USA","Uzbekistan","St. Vincent and the Grenadines","Venezuela","Vietnam","Vanuatu","Samoa","Yemen","South Africa","Zambia","Zimbabwe"],"locations":["AFG","AGO","ALB","AND","ARE","ARG","ARM","ATG","AUS","AUT","AZE","BDI","BEL","BEN","BFA","BGD","BGR","BHR","BHS","BIH","BLR","BLZ","BOL","BRA","BRB","BRN","BTN","BWA","CAF","CAN","CHE","CHL","CHN","CIV","CMR","COD","COG","COL","COM","CPV","CRI","CUB","CYP","CZE","DEU","DJI","DMA","DNK","DOM","DZA","ECU","EGY","ERI","ESP","EST","ETH","FIN","FJI","FRA","FSM","GAB","GBR","GEO","GHA","GIN","GMB","GNB","GNQ","GRC","GRD","GTM","GUY","HND","HRV","HTI","HUN","IDN","IND","IRL","IRN","IRQ","ISL","ISR","ITA","JAM","JOR","JPN","KAZ","KEN","KGZ","KHM","KIR","KNA","KOR","KWT","LAO","LBN","LBR","LBY","LCA","LKA","LSO","LTU","LUX","LVA","MAR","MCO","MDA","MDG","MDV","MEX","MHL","MKD","MLI","MLT","MMR","MNE","MNG","MOZ","MRT","MUS","MWI","MYS","NAM","NER","NGA","NIC","NLD","NOR","NPL","NRU","NZL","OMN","PAK","PAN","PER","PHL","PLW","PNG","POL","PRK","PRT","PRY","PSE","QAT","ROU","RUS","RWA","SAU","SDN","SEN","SGP","SLB","SLE","SLV","SMR","SOM","SRB","SSD","STP","SUR","SVK","SVN","SWE","SWZ","SYC","SYR","TCD","TGO","THA","TJK","TKM","TLS","TON","TTO","TUN","TUR","TUV","TZA","UGA","UKR","URY","USA","UZB","VCT","VEN","VNM","VUT","WSM","YEM","ZAF","ZMB","ZWE"],"name":"","z":[64.6,62.8,77.4,82.7,79.5,76.4,70.7,77.3,83.8,81.3,70.1,61.2,80.4,65.1,67.2,69.6,74.2,76.1,71.2,75.8,74.2,73.2,63.8,75.2,76.5,78.0,72.3,69.0,53.8,81.6,83.1,79.4,80.7,63.1,60.2,59.6,62.7,77.5,74.3,73.3,79.4,77.8,80.1,78.3,81.0,67.0,75.3,81.5,72.0,74.7,73.7,69.1,62.1,82.1,78.5,63.7,81.9,68.0,82.3,66.3,65.4,80.4,73.2,64.3,61.1,64.4,59.3,60.1,81.2,74.6,71.2,69.6,72.6,77.7,61.6,75.7,71.4,70.3,82.2,74.2,67.5,82.7,83.0,82.0,74.5,75.3,84.8,71.7,66.6,71.6,73.4,70.5,74.1,83.5,78.6,66.2,72.9,58.2,72.2,76.7,82.0,78.2,56.3,75.2,82.5,75.8,71.6,79.6,73.1,61.6,76.0,71.4,63.7,74.6,61.3,82.2,65.8,75.2,72.6,62.8,66.1,74.6,61.2,76.6,64.2,57.5,63.0,71.9,81.2,83.1,72.2,58.4,82.3,73.5,66.8,76.7,72.4,71.7,68.3,66.5,76.7,73.6,81.4,72.4,76.0,80.5,74.3,72.0,63.7,72.4,67.6,68.4,85.7,63.6,57.3,71.3,84.0,63.0,74.7,55.8,67.0,72.2,76.9,80.4,82.4,57.0,75.8,74.4,56.5,63.4,77.8,71.9,69.1,69.3,71.6,72.8,72.7,76.2,63.1,67.2,64.6,72.3,77.9,77.1,71.2,74.2,71.8,75.9,69.8,72.5,67.9,64.4,59.2,63.5],"type":"choropleth"}];
+
+        const plotlyLayout = {
+            "geo": {
+                "bgcolor": "#081224",
+                "showframe": false,
+                "showcoastlines": true,
+                "coastlinecolor": "#223A57",
+                "showcountries": true,
+                "countrycolor": "#223A57",
+                "landcolor": "#12203B",
+                "oceancolor": "#081224",
+                "showocean": true
+            },
+            "coloraxis": {
+                "colorbar": {
+                    "title": {"text": "Life expectancy (years)", "font": {"color": "#F2F7FB"}},
+                    "tickfont": {"color": "#A8B8C8"},
+                    "outlinecolor": "#223A57"
+                },
+                "colorscale": [[0.0,"#0E243D"],[0.2,"#14B8A6"],[0.55,"#39D0D0"],[0.8,"#3B82F6"],[1.0,"#2563EB"]]
+            },
+            "title": {"text": "Life Expectancy at Birth by Country, 2020", "font": {"size": 18, "color": "#F2F7FB"}},
+            "font": {"color": "#F2F7FB", "family": "Arial, sans-serif"},
+            "margin": {"l": 10, "r": 10, "t": 50, "b": 10},
+            "paper_bgcolor": "#081224",
+            "plot_bgcolor": "#081224"
+        };
+
+        // Plotly Graph Data Matrix for Week 2 GDP Visualization (Tab 2)
+        const gdpPlotlyData = [{"coloraxis":"coloraxis","customdata":[["AFG",2769.68575],["AGO",7556.96793],["ALB",14662.79552],["AND",55488.4903],["ARE",65784.67694],["ARG",23877.09314],["ARM",15052.93598],["ATG",23930.6715],["AUS",57059.74364],["AUT",60349.90228],["AZE",19126.09685],["BDI",833.92026],["BEL",57358.83703],["BEN",3317.85972],["BFA",2380.93172],["BGD",7015.19793],["BGR",28545.70853],["BHR",53814.24526],["BHS",26452.52516],["BIH",16746.39041],["BLR",26731.49538],["BLZ",10032.5445],["BOL",9000.97565],["BRA",17327.51572],["BRB",15749.03802],["BRN",80280.89795],["BTN",12979.93695],["BWA",16289.39136],["CAF",1136.57053],["CAN",54092.87903],["CHE",77324.88709],["CHL",26248.56164],["CHN",19215.15417],["CIV",5787.81533],["CMR",4763.48194],["COD",1277.63286],["COG",6350.50913],["COL",15861.49993],["COM",3424.53969],["CPV",7207.86854],["CRI",22211.86139],["CUB",14939.77245],["CYP",44203.89063],["CZE",45119.93873],["DEU",60342.6627],["DJI",5791.47768],["DMA",14919.53077],["DNK",65204.54932],["DOM",19545.40996],["DZA",14194.15575],["ECU",12440.32637],["EGY",15309.23599],["ERI",1912.47217],["ESP",41553.44779],["EST",41340.76465],["ETH",2516.54908],["FIN",55424.8575],["FJI",11254.96982],["FRA",49311.33341],["FSM",3850.53053],["GAB",18681.48407],["GBR",47144.72215],["GEO",17031.14403],["GHA",6412.68542],["GIN",3630.99331],["GMB",2702.3192],["GNB",2413.67908],["GNQ",17089.15373],["GRC",30487.11293],["GRD",14656.72088],["GTM",11097.15007],["GUY",19234.1302],["HND",5603.26398],["HRV",32493.62543],["HTI",3229.47554],["HUN",36119.52117],["IDN",12388.54493],["IND",7399.53068],["IRL",101970.8126],["IRN",14397.15357],["IRQ",12827.63454],["ISL",59627.24234],["ISR",42915.94169],["ITA",45505.06887],["JAM",9178.32078],["JOR",9022.6393],["JPN",42992.47964],["KAZ",32011.54915],["KEN",5057.40115],["KGZ",5537.79547],["KHM",6128.78244],["KIR",2834.68581],["KNA",26736.92836],["KOR",46361.59578],["KWT",49372.57295],["LAO",7995.59502],["LBN",12507.43664],["LBR",1497.37692],["LBY",9976.0374],["LCA",17142.04406],["LKA",13886.65137],["LSO",2517.11042],["LTU",43091.79737],["LUX",129865.63],["LVA",34225.8976],["MAR",8054.56299],["MCO",332201.78],["MDA",13559.26002],["MDG",1545.72714],["MDV",14242.97508],["MEX",19728.48178],["MHL",6417.18441],["MKD",20970.28714],["MLI",2796.41038],["MLT",50392.95912],["MMR",5926.8345],["MNE",21039.32187],["MNG",14801.34208],["MOZ",1466.12477],["MRT",5963.2355],["MUS",21994.66598],["MWI",1656.43985],["MYS",29200.45263],["NAM",9652.24827],["NER",1615.69272],["NGA",5410.69355],["NIC",6523.36985],["NLD",64862.19225],["NOR",86096.05089],["NPL",4412.54204],["NRU",11441.25845],["NZL",46104.60579],["OMN",37560.59987],["PAK",5135.01459],["PAN",26881.79871],["PER",13609.59996],["PHL",8455.18457],["PLW",18160.25457],["PNG",4077.63132],["POL",37852.80213],["PRK",1445.36],["PRT",36852.22839],["PRY",14991.66062],["PSE",5423.68255],["QAT",103061.9134],["ROU",35482.19631],["RUS",36376.33594],["RWA",2520.31739],["SAU",57420.73357],["SDN",3401.24976],["SEN",4018.04129],["SGP",115893.0424],["SLB",2515.12833],["SLE",2755.10252],["SLV",9692.44932],["SMR",55998.0711],["SOM",1396.05343],["SRB",21477.87722],["SSD",625.73],["STP",5742.94725],["SUR",19091.36172],["SVK",36201.41546],["SVN",42474.22471],["SWE",59572.47476],["SWZ",9727.5139],["SYC",30056.19943],["SYR",4633.34952],["TCD",2513.01578],["TGO",2490.05294],["THA",19957.25714],["TJK",3724.74896],["TKM",15791.17759],["TLS",6598.0346],["TON",6995.31729],["TTO",30723.40355],["TUN",11955.56592],["TUR",28378.55208],["TUV",5154.45958],["TZA",3449.82153],["UGA",2678.00907],["UKR",17092.53906],["URY",27788.1855],["USA",67342.07093],["UZB",8727.41105],["VCT",15763.70544],["VEN",5729.397],["VNM",11851.39657],["VUT",3259.99544],["WSM",6745.3064],["YEM",1660.776],["ZAF",13266.78581],["ZMB",3391.59541],["ZWE",2987.26841]],"geo":"geo","hovertemplate":"<b>%{hovertext}</b><br><br>iso3=%{customdata[0]}<br>GDP per capita=%{z:,.0f}<extra></extra>","hovertext":["Afghanistan","Angola","Albania","Andorra","UAE","Argentina","Armenia","Antigua and Barbuda","Australia","Austria","Azerbaijan","Burundi","Belgium","Benin","Burkina Faso","Bangladesh","Bulgaria","Bahrain","Bahamas","Bosnia and Herzegovina","Belarus","Belize","Bolivia","Brazil","Barbados","Brunei","Bhutan","Botswana","Central African Republic","Canada","Switzerland","Chile","China","Cote d'Ivoire","Cameroon","Congo, Dem. Rep.","Congo, Rep.","Colombia","Comoros","Cape Verde","Costa Rica","Cuba","Cyprus","Czech Republic","Germany","Djibouti","Dominica","Denmark","Dominican Republic","Algeria","Ecuador","Egypt","Eritrea","Spain","Estonia","Ethiopia","Finland","Fiji","France","Micronesia, Fed. Sts.","Gabon","UK","Georgia","Ghana","GIN","GMB","GNB","GNQ","Greece","Grenada","Guatemala","Guyana","Honduras","Croatia","Haiti","Hungary","Indonesia","India","Ireland","Iran","Iraq","Iceland","Israel","Italy","Jamaica","Jordan","Japan","Kazakhstan","Kenya","Kyrgyz Republic","Cambodia","Kiribati","St. Kitts and Nevis","South Korea","Kuwait","Lao","Lebanon","Liberia","Libya","St. Lucia","Sri Lanka","Lesotho","Lithuania","Luxembourg","Latvia","Morocco","Monaco","Moldova","Madagascar","Maldives","Mexico","Marshall Islands","North Macedonia","Mali","Malta","Myanmar","Montenegro","Mongolia","Mozambique","Mauritania","Mauritius","Malawi","Malaysia","Namibia","Niger","Nigeria","Nicaragua","Netherlands","Norway","Nepal","Nauru","New Zealand","Oman","Pakistan","Panama","Peru","Philippines","Palau","Papua New Guinea","Poland","North Korea","Portugal","Paraguay","Palestine","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Sudan","Senegal","Singapore","Solomon Islands","Sierra Leone","El Salvador","San Marino","Somalia","Serbia","South Sudan","Sao Tome and Principe","Suriname","Slovak Republic","Slovenia","Sweden","Eswatini","Seychelles","Syria","Chad","Togo","THA","TJK","TKM","Timor-Leste","Tonga","Trinidad and Tobago","Tunisia","Turkey","Tuvalu","Tanzania","Uganda","Ukraine","Uruguay","USA","Uzbekistan","St. Vincent and the Grenadines","Venezuela","Vietnam","Vanuatu","Samoa","Yemen","South Africa","Zambia","Zimbabwe"],"locations":["AFG","AGO","ALB","AND","ARE","ARG","ARM","ATG","AUS","AUT","AZE","BDI","BEL","BEN","BFA","BGD","BGR","BHR","BHS","BIH","BLR","BLZ","BOL","BRA","BRB","BRN","BTN","BWA","CAF","CAN","CHE","CHL","CHN","CIV","CMR","COD","COG","COL","COM","CPV","CRI","CUB","CYP","CZE","DEU","DJI","DMA","DNK","DOM","DZA","ECU","EGY","ERI","ESP","EST","ETH","FIN","FJI","FRA","FSM","GAB","GBR","GEO","GHA","GIN","GMB","GNB","GNQ","GRC","GRD","GTM","GUY","HND","HRV","HTI","HUN","IDN","IND","IRL","IRN","IRQ","ISL","ISR","ITA","JAM","JOR","JPN","KAZ","KEN","KGZ","KHM","KIR","KNA","KOR","KWT","LAO","LBN","LBR","LBY","LCA","LKA","LSO","LTU","LUX","LVA","MAR","MCO","MDA","MDG","MDV","MEX","MHL","MKD","MLI","MLT","MMR","MNE","MNG","MOZ","MRT","MUS","MWI","MYS","NAM","NER","NGA","NIC","NLD","NOR","NPL","NRU","NZL","OMN","PAK","PAN","PER","PHL","PLW","PNG","POL","PRK","PRT","PRY","PSE","QAT","ROU","RUS","RWA","SAU","SDN","SEN","SGP","SLB","SLE","SLV","SMR","SOM","SRB","SSD","STP","SUR","SVK","SVN","SWE","SWZ","SYC","SYR","TCD","TGO","THA","TJK","TKM","TLS","TON","TTO","TUN","TUR","TUV","TZA","UGA","UKR","URY","USA","UZB","VCT","VEN","VNM","VUT","WSM","YEM","ZAF","ZMB","ZWE"],"name":"","z":{"dtype":"f8","bdata":"d76fGl+jpUDRrkLK94S9QKhvmdNlo8xAJ6CJsA8Y60CWCb\u002fUig\u002fwQH15AfZFUddA21AxzndmzUDRItv5ql7XQAAd5st33OtAe05637x37UCoV8oyhq3SQIleRrFcD4pAeSPzyNoB7EBvRzgtuOupQA9iZwrdmaJA5lyKqzJnu0CPNo5YbeDbQOF\u002fK9nHRupAS7A4nCHV2UCCOXr8mFrQQMZQTrTfGtpAVg4tskWYw0AsZRnifJTBQHl1jgHh69BATODW3YTCzkC30QBejpnzQP5D+u33WclAe6AVGLLQz0CMLQQ5SMKRQMaFAyGcaepAqkiFMc7g8kAI5ujxI6LZQALZ693Jw9JAc4V3udCbtkCiemtge5uyQMmrcwyI9pNAavtXVoLOuEAlzLT9v\u002frOQPVnP1IUwapARS+jWN4nvEDGhQMh97DVQOY\u002fpN\u002fiLc1AW3wKgHyV5UA5fxMK\u002fgfmQGKh1jTVdu1A9Ik8SXqftkDZd0XwwyPNQGGJB5SR1u9AK97IPFoW00Atsp3vE7nLQDP+fcYpTMhAF5rrNJ7mzUCcUIiA4+GdQK+xS1QuSuRA3EYDeJgv5EDGhQMhGamjQArXo3AbEOtAgc8PI3z7xUDFckur6hPoQBjPoKEPFa5AvrwA+14+0kAaUdobFwXnQOmayTfJodBABmSvd68MuUCU2SCT\u002fF2sQMSxLm6jHKVAvK5fsFvbokCbWrbWSbDQQC\u002fAPjrHxd1ALLzLRVygzEAOZ341k6zFQHxhMlWIyNJAzHoxlEPjtUD8jAsHaLvfQOGX+nnzOqlANbVsrfCi4UBOKETARTLIQKT8pNqH57xAjNtoAC3l+EDThy6okx7MQABSmzjRDclA0NA\u002fwWcd7UAfEVMifvTkQLbbLjQiOOZAm6xRDyntwUArGJXUUZ\u002fBQDv8NVkP\u002fuRApgpGJeNC30DKMsSxZsGzQPMC7KPLobVAFeP8Tcjwt0CKAn0iXyWmQLsPQGo7HNpA9DehEDOj5kAIPZtVkhvoQHcQO1OYO79AEMzR47dtyEDVBFH3gWWXQG\u002fwhckEfMNAxAjh0YK90EDMlxdgUx\u002fLQKZh+Ig4qqNAGhcOhHkK5UBI4XoUmrT\u002fQJyiI7k8tuBA+tUcIJB2v0DsUbgep0YUQSfaVUihe8pAdF5jl+gmmEB+42vPfNHLQPfHe9UeRNNADmd+NS8RuUBYc4BgknrUQN3NUx3S2KVAHm0csR6b6ECDwMqh1Sa3QOSghJnUi9RATwZHyavozEAW9rTDf+iWQDVeukk8S7dA85Nqn6p61UCV1AlowuGZQMzR4\u002fcchNxASrVPxx\u002fawkAkRWRYxT6ZQCQofoyxIrVAbVZ9rl57uUDVeOkmxqvvQFsIctAABfVAICkiw4o8sUDTvOMUoVjGQMi1oWITg+ZA+5EiMhNX4kDZlCu8Aw+0QD+MEB5zQNpAdEF9y8yUykDpYP2fl4PAQCP430oQvNFAnwJgPEPbr0CkiAyrmXviQD0K16NwlZZAl4v4Tof+4UCLNzKP1EfNQOPHmLuuL7VAg1FJnV4p+UC86CtIRlPhQC0+BcAKw+FAKCzxgKKwo0Dqymd5lwnsQLPviuB\u002fkqpATn\u002f2IxVkr0BWn6utUEv8QDFCeLRBpqNAX16AfTSGpUC4WFGDOe7CQNiBc0bCV+tAgJpatjbQlUDZWl8kePnUQKRwPQrXjYNAI9v5fvJutkCUpGsm16TSQBnFckstreFAowbTMEe95EAu4jsxjxbtQLWmecfB\u002f8JA9gt2wwxa3UBMiSR6WRmyQN3vUBQIoqNATaHzGht0o0CgVPt0UH3TQAZkr3d\u002fGa1ADOVEu5bXzkBxrIvbCMa5QFnd6jlRU7tAE2HD09kA3kATChFwyFnHQDJaR1WjtttA5e0Ip3UitEBehZSfpPOqQMCy0qQE7KRApYP1fyKx0EBaZDvfCyPbQOV+hyLhcPBAg1FJnbQLwUCloNtL2snOQIPAyqFlYbZASkbOwrIlx0BDyk+q\u002fXepQH\u002f7OnBOWbpAyXa+nxrzmUBvDWyVZOnJQGxblNkwf6pA1xcJbYlWp0A="},"type":"choropleth"}];
+
+        const gdpPlotlyLayout = {
+            "geo": {
+                "bgcolor": "#081224",
+                "showframe": false,
+                "showcoastlines": true,
+                "coastlinecolor": "#223A57",
+                "showcountries": true,
+                "countrycolor": "#223A57",
+                "landcolor": "#12203B",
+                "oceancolor": "#081224",
+                "showocean": true
+            },
+            "coloraxis": {
+                "colorbar": {
+                    "title": {"text": "GDP per capita", "font": {"color": "#F2F7FB"}},
+                    "tickfont": {"color": "#A8B8C8"},
+                    "outlinecolor": "#223A57"
+                },
+                "colorscale": [[0.0,"#3A2608"],[0.22,"#F59E0B"],[0.45,"#FFB84D"],[0.68,"#14B8A6"],[0.85,"#39D0D0"],[1.0,"#3B82F6"]]
+            },
+            "title": {"text": "GDP per Capita by Country, 2020", "font": {"size": 18, "color": "#F2F7FB"}},
+            "font": {"color": "#F2F7FB", "family": "Arial, sans-serif"},
+            "margin": {"l": 10, "r": 10, "t": 50, "b": 10},
+            "paper_bgcolor": "#081224",
+            "plot_bgcolor": "#081224"
+        };
+
         // Project Modals Content Matrix
         const submissionProjects = {
             'week1': {
@@ -876,14 +939,67 @@
                 `
             },
             'week2': {
-                title: "AI-Automated Data Analysis Pipeline",
+                title: "AI-Automated Data Analysis & Visualizations",
                 subtitle: "Module 2 Submission",
-                tech: "Julius AI, Code Interpreter, Python, PowerBI",
+                tech: "Plotly.js, Julius AI, Python, Code Interpreter",
                 body: `
-                    <p><strong>Overview:</strong> Developed automated scripts to ingest raw survey validation datasets, detect outliers, and generate performance visualizer charts instantly.</p>
-                    <p><strong>Methodology:</strong> Programmed validation rules via Code Interpreter. Designed workflows that flag anomalies, keeping local project indicators synchronized.</p>
-                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
-                        <span class="text-brand-amber font-semibold">M&E Application:</span> Automated monthly report tracking for vaccine logs across multiple clinics.
+                    <p class="mb-4"><strong>Overview:</strong> This second-week project performs rigorous parsing and visualization of global development indicators.</p>
+                    
+                    <!-- Visualization Sub-Navigation Tabs -->
+                    <div class="flex flex-wrap border-b border-slate-800 mb-6 gap-2">
+                        <button onclick="switchVisualTab(1)" id="visual-tab-1" class="px-4 py-2 border-b-2 border-brand-teal font-semibold text-xs text-brand-teal transition-all">
+                            1. Life Expectancy Map
+                        </button>
+                        <button onclick="switchVisualTab(2)" id="visual-tab-2" class="px-4 py-2 border-b-2 border-transparent font-medium text-xs text-slate-400 hover:text-white transition-all">
+                            2. GDP per Capita Map
+                        </button>
+                        <button onclick="switchVisualTab(3)" id="visual-tab-3" class="px-4 py-2 border-b-2 border-transparent font-medium text-xs text-slate-400 hover:text-white transition-all">
+                            3. Visualization 3
+                        </button>
+                        <button onclick="switchVisualTab(4)" id="visual-tab-4" class="px-4 py-2 border-b-2 border-transparent font-medium text-xs text-slate-400 hover:text-white transition-all">
+                            4. Visualization 4
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Visualizations Container -->
+                    <div class="relative min-h-[400px]">
+                        <!-- Tab Content 1: Active -->
+                        <div id="visual-content-1" class="visual-pane block">
+                            <div class="p-4 rounded-2xl bg-[#081224] border border-slate-800 my-4 shadow-inner">
+                                <div id="24a3ad68-2514-445f-b308-16893d3f639d" style="width: 100%; height: 350px;"></div>
+                                <p class="text-[10px] text-slate-500 text-center mt-2 font-mono">Plotly.js Choropleth Render Integration Engine (2020 Analytics)</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content 2: GDP Map -->
+                        <div id="visual-content-2" class="visual-pane hidden">
+                            <div class="p-4 rounded-2xl bg-[#081224] border border-slate-800 my-4 shadow-inner">
+                                <div id="28939826-3da8-4ed1-ab28-6d7dc0e2bf07" style="width: 100%; height: 350px;"></div>
+                                <p class="text-[10px] text-slate-500 text-center mt-2 font-mono">Plotly.js GDP per Capita Render Integration Engine (2020 Analytics)</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content 3: Placeholder -->
+                        <div id="visual-content-3" class="visual-pane hidden">
+                            <div class="flex flex-col items-center justify-center p-12 border border-dashed border-slate-800 rounded-2xl bg-slate-900/50">
+                                <i class="fa-solid fa-chart-bar text-slate-600 text-4xl mb-4"></i>
+                                <h5 class="text-sm font-bold text-white mb-1">Awaiting Code for Visualization 3</h5>
+                                <p class="text-xs text-slate-500 text-center max-w-sm">Share your HTML source to display your third automated dataset visualization.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content 4: Placeholder -->
+                        <div id="visual-content-4" class="visual-pane hidden">
+                            <div class="flex flex-col items-center justify-center p-12 border border-dashed border-slate-800 rounded-2xl bg-slate-900/50">
+                                <i class="fa-solid fa-chart-pie text-slate-600 text-4xl mb-4"></i>
+                                <h5 class="text-sm font-bold text-white mb-1">Awaiting Code for Visualization 4</h5>
+                                <p class="text-xs text-slate-500 text-center max-w-sm">Share your HTML source to display your fourth automated dataset visualization.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs mt-6">
+                        <span class="text-brand-amber font-semibold">M&E Integration:</span> Dynamic validation dashboards like this enable the immediate extraction of health status outliers, giving direct indicators insights to institutional directors.
                     </div>
                 `
             },
@@ -1022,8 +1138,80 @@
             document.getElementById('modal-body').innerHTML = project.body;
 
             const modal = document.getElementById('project-modal');
+            const container = document.getElementById('modal-container-element');
+
+            // Force dynamic modal resizing for rich data tabs
+            if (projectId === 'week2' || projectId === 'capstone') {
+                container.className = "relative w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
+            } else {
+                container.className = "relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
+            }
+
             modal.classList.remove('hidden');
             document.body.classList.add('overflow-hidden'); // Lock body scroll
+
+            // Trigger Plotly load asynchronously if Week 2 tab is loaded
+            if (projectId === 'week2') {
+                setTimeout(() => {
+                    switchVisualTab(1);
+                }, 100);
+            }
+        }
+
+        // Asynchronous Plotly Map Render Helper
+        function renderPlotlyMap(tabId) {
+            if (tabId === 1) {
+                if (document.getElementById("24a3ad68-2514-445f-b308-16893d3f639d")) {
+                    Plotly.newPlot(
+                        "24a3ad68-2514-445f-b308-16893d3f639d",
+                        plotlyData,
+                        plotlyLayout,
+                        {"responsive": true}
+                    );
+                }
+            } else if (tabId === 2) {
+                if (document.getElementById("28939826-3da8-4ed1-ab28-6d7dc0e2bf07")) {
+                    Plotly.newPlot(
+                        "28939826-3da8-4ed1-ab28-6d7dc0e2bf07",
+                        gdpPlotlyData,
+                        gdpPlotlyLayout,
+                        {"responsive": true}
+                    );
+                }
+            }
+        }
+
+        // Switch Tabs inside Week 2 Submission Modal
+        function switchVisualTab(tabId) {
+            // Loop through all tab buttons
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`visual-tab-${i}`);
+                const content = document.getElementById(`visual-content-${i}`);
+                if (btn && content) {
+                    if (i === tabId) {
+                        btn.className = "px-4 py-2 border-b-2 border-brand-teal font-semibold text-xs text-brand-teal transition-all";
+                        content.classList.remove('hidden');
+                        content.classList.add('block');
+                    } else {
+                        btn.className = "px-4 py-2 border-b-2 border-transparent font-medium text-xs text-slate-400 hover:text-white transition-all";
+                        content.classList.remove('block');
+                        content.classList.add('hidden');
+                    }
+                }
+            }
+
+            // Render and resize appropriate map based on active tab selection
+            if (tabId === 1) {
+                setTimeout(() => {
+                    renderPlotlyMap(1);
+                    Plotly.Plots.resize("24a3ad68-2514-445f-b308-16893d3f639d");
+                }, 50);
+            } else if (tabId === 2) {
+                setTimeout(() => {
+                    renderPlotlyMap(2);
+                    Plotly.Plots.resize("28939826-3da8-4ed1-ab28-6d7dc0e2bf07");
+                }, 50);
+            }
         }
 
         function closeModal() {
