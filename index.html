@@ -38,6 +38,7 @@
             }
         }
     </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -47,48 +48,90 @@
                 radial-gradient(circle at 78% 18%, rgba(20,184,166,.12), transparent 28%),
                 linear-gradient(135deg, #081224, #0c1a31 56%, #08101f);
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #2DD4BF 0%, #3B82F6 50%, #818CF8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .gradient-border-card {
             position: relative;
             background: rgba(18, 32, 59, 0.65);
             border: 1px solid rgba(34, 58, 87, 0.8);
             backdrop-filter: blur(12px);
         }
+
         .gradient-border-card:hover {
             border-color: rgba(20, 184, 166, 0.4);
             box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
             transform: translateY(-2px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        /* Custom scrollbar */
+
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #081224;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #14b8a6;
         }
         
-        /* Modal specific dashboard tables */
-        .dash-table th, .dash-table td {
+        .dash-table th, 
+        .dash-table td {
             border-bottom: 1px solid rgba(34,58,87,.8);
             padding: 7px 9px;
             text-align: left;
             white-space: nowrap;
         }
-        .dash-table th { color: #f2f7fb; }
+
+        .dash-table th { 
+            color: #f2f7fb; 
+        }
+
+        .interpretation-highlight {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            border-left: 5px solid #f59e0b;
+            border-radius: 14px;
+            padding: 18px 20px;
+            color: #f8fafc;
+            box-shadow: 0 0 18px rgba(245, 158, 11, 0.08);
+        }
+
+        .interpretation-highlight strong,
+        .interpretation-highlight h3,
+        .interpretation-highlight .label {
+            color: #f59e0b;
+        }
+
+        .reflection-highlight {
+            background: rgba(20, 184, 166, 0.12);
+            border: 1px solid rgba(20, 184, 166, 0.45);
+            border-left: 5px solid #14b8a6;
+            border-radius: 14px;
+            padding: 18px 20px;
+            color: #f8fafc;
+            box-shadow: 0 0 18px rgba(20, 184, 166, 0.08);
+        }
+
+        .reflection-highlight strong,
+        .reflection-highlight h3,
+        .reflection-highlight .label {
+            color: #14b8a6;
+        }
     </style>
 </head>
+
 <body class="text-slate-100 antialiased overflow-x-hidden">
 
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#081224]/80 backdrop-blur-md border-b border-[#223a57]">
@@ -107,6 +150,7 @@
                         </span>
                     </a>
                 </div>
+
                 <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
                     <a href="#about" class="hover:text-brand-teal transition-colors">About Me</a>
                     <a href="#skills" class="hover:text-brand-teal transition-colors">Skills Matrix</a>
@@ -116,6 +160,7 @@
                         Get In Touch
                     </a>
                 </div>
+
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
                         <i class="fa-solid fa-bars text-xl"></i>
@@ -137,10 +182,11 @@
 
     <header id="hero" class="relative pt-32 pb-24 md:pt-40 md:pb-36 flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#12203b_1px,transparent_1px),linear-gradient(to_bottom,#12203b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35"></div>
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#12203b]/80 border border-[#223a57] text-xs sm:text-sm text-slate-300 mb-6 shadow-inner">
                 <span class="w-2.5 h-2.5 rounded-full bg-brand-teal animate-ping"></span>
-                <span>Active Cohort: Generative AI for Work & Research</span>
+                <span>Active Cohort: Generative AI for Work &amp; Research</span>
                 <span class="text-brand-amber font-semibold">| The GRAPH Courses</span>
             </div>
 
@@ -215,7 +261,7 @@
                         </div>
 
                         <p class="text-sm text-slate-400 leading-relaxed mb-6">
-                            Detail-oriented project expert with robust experience orchestrating data systems, partner communications, and platform operations for multinational development projects (UNICEF, Global Affairs Canada, and Australian DFAT). 
+                            Detail-oriented project expert with robust experience orchestrating data systems, partner communications, and platform operations for multinational development projects including UNICEF, Global Affairs Canada, and Australian DFAT. 
                         </p>
 
                         <div class="space-y-4 pt-4 border-t border-[#223a57]">
@@ -274,7 +320,7 @@
                                 <div class="space-y-2">
                                     <h4 class="font-heading font-bold text-lg text-white">Large-Scale Data Engineering &amp; Validation</h4>
                                     <p class="text-sm text-slate-400">
-                                        Supervised core immunization datasets covering 18 regions, 350+ Local Government Units (LGUs), and key performance frameworks. Maintained complete data fidelity using advanced validations (ONA Data, KoboToolBox, PowerBI, and data analytics tracks).
+                                        Supervised core immunization datasets covering 18 regions, 350+ Local Government Units, and key performance frameworks. Maintained complete data fidelity using advanced validations including ONA Data, KoboToolBox, PowerBI, and data analytics tracks.
                                     </p>
                                 </div>
                             </div>
@@ -288,7 +334,7 @@
                                 <div class="space-y-2">
                                     <h4 class="font-heading font-bold text-lg text-white">Multi-Stakeholder Communication</h4>
                                     <p class="text-sm text-slate-400">
-                                        Led critical interactions, reporting, and learning sessions for institutional donors including UNICEF, Global Affairs Canada, Australian Department of Foreign Affairs and Trade, START Network, and the Center for Disaster Philanthropy. Managed fast-paced content, timelines, and publication tracking.
+                                        Led critical interactions, reporting, and learning sessions for institutional donors including UNICEF, Global Affairs Canada, Australian Department of Foreign Affairs and Trade, START Network, and the Center for Disaster Philanthropy.
                                     </p>
                                 </div>
                             </div>
@@ -358,11 +404,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-indigo-400"></i>
-                            <span>Prompt Design (LLM Tuning)</span>
+                            <span>Prompt Design and LLM Workflows</span>
                         </li>
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-indigo-400"></i>
-                            <span>Automated Code Interp (Python/JS)</span>
+                            <span>Automated Code Interpretation</span>
                         </li>
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-indigo-400"></i>
@@ -370,7 +416,7 @@
                         </li>
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-indigo-400"></i>
-                            <span>Retrieval-Augmented Chatbots (RAG)</span>
+                            <span>Retrieval-Augmented Chatbots</span>
                         </li>
                     </ul>
                 </div>
@@ -391,7 +437,7 @@
                         </li>
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-brand-amber"></i>
-                            <span>Relief &amp; Dev Team Leadership</span>
+                            <span>Relief &amp; Development Team Leadership</span>
                         </li>
                         <li class="flex items-center space-x-3 text-sm text-slate-300">
                             <i class="fa-solid fa-circle-check text-brand-amber"></i>
@@ -413,6 +459,7 @@
                         An intensive, 8-week cohort engineered by <strong>The GRAPH Courses</strong> to train researchers and professionals in the transparent, responsible deployment of no-code artificial intelligence.
                     </p>
                 </div>
+
                 <div class="mt-6 lg:mt-0 px-6 py-4 rounded-2xl bg-[#12203b] border border-[#223a57] flex items-center space-x-4">
                     <div class="w-12 h-12 rounded-xl bg-brand-amber/15 text-brand-amber flex items-center justify-center text-xl">
                         <i class="fa-solid fa-graduation-cap"></i>
@@ -489,10 +536,13 @@
                     </div>
                     <div class="pt-4 border-t border-[#223a57] flex items-center justify-between">
                         <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Markdown, HTML</span>
-                        <button onclick="openModal('week1')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
-                            <span>Inspect Project</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </button>
+                        <a href="https://nicorastrullo.github.io/graph-ai-portfolio/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Open Output</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -516,21 +566,21 @@
                     </div>
                 </div>
 
-                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between">
+                <div class="gradient-border-card p-6 rounded-3xl flex flex-col justify-between border border-brand-amber/30 shadow-[0_0_15px_rgba(245,158,11,0.12)]">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-indigo-500/10 text-indigo-400">Week 3 Submission</span>
                             <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400">Completed</span>
                         </div>
-                        <h4 class="font-heading font-bold text-lg text-white mb-2">Lit Search &amp; Qualitative Analytics</h4>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Job Market Data Analysis</h4>
                         <p class="text-xs text-slate-400 leading-relaxed mb-4">
-                            Created automated sentiment mapping frameworks to evaluate beneficiary text responses, saving immense qualitative compilation overhead.
+                            Used LLMs in Google Sheets to extract job posting details, then analyzed relationships between experience requirements, programming languages, and salaries.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-[#223a57] flex items-center justify-between">
-                        <span class="text-[11px] uppercase tracking-wider text-slate-500">Framework: Elicit, NLP Models</span>
-                        <button onclick="openModal('week3')" class="text-xs font-bold text-brand-teal hover:text-white transition-colors flex items-center space-x-1">
-                            <span>Inspect Project</span>
+                        <span class="text-[11px] uppercase tracking-wider text-brand-amber font-semibold">LLMs + Google Sheets</span>
+                        <button onclick="openModal('week3')" class="text-xs font-bold text-brand-amber hover:text-white transition-colors flex items-center space-x-1">
+                            <span>Open Report</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
@@ -718,7 +768,7 @@
                 </div>
 
                 <div id="modal-body" class="space-y-4 text-sm text-slate-300 leading-relaxed max-h-[75vh] overflow-y-auto pr-2 custom-scrollbar">
-                    </div>
+                </div>
 
                 <div class="mt-8 pt-6 border-t border-[#223a57] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <span id="modal-tech" class="text-[11px] font-mono text-slate-500 uppercase">Framework: N/A</span>
@@ -736,16 +786,15 @@
     </div>
 
     <script>
-        // Module Data Matrix
         const courseModules = {
             1: {
                 title: "Module 1: Websites, Documents & Presentations",
-                objective: "Learn how large language models (LLMs) function, text validation, responsive markdown deployment, and standard web hosting structures.",
+                objective: "Learn how large language models function, text validation, responsive markdown deployment, and standard web hosting structures.",
                 topics: [
-                    "Syllabus structures & LLM deep dives",
-                    "Custom Markdown, HTML & LaTeX compilations",
+                    "Syllabus structures and LLM deep dives",
+                    "Custom Markdown, HTML and LaTeX compilations",
                     "Designing research websites using GPT Canvas interface mechanics",
-                    "Implementing interactive formatting for scientific presentations & proposals"
+                    "Implementing interactive formatting for scientific presentations and proposals"
                 ],
                 meMatch: "Allows M&E managers to translate messy raw baseline results indicators into highly structured online tables and interactive dashboard presentation frames instantaneously."
             },
@@ -755,17 +804,17 @@
                 topics: [
                     "Direct file manipulation and dataset cleansing protocols",
                     "Structuring automated interactive tracking dashboards",
-                    "Dynamic automated spreadsheet scripting & formatting validations",
+                    "Dynamic automated spreadsheet scripting and formatting validations",
                     "Leveraging Julius and Code Interpreter for large qualitative checks"
                 ],
                 meMatch: "Accelerates traditional validation tracking of multi-regional vaccine reporting logs. Converts dozens of local LGU Excel spreadsheets into unified formats in seconds."
             },
             3: {
                 title: "Module 3: GenAI for Research & Text Analysis",
-                objective: "Learn Al techniques for literature search, text analysis, and knowledge synthesis. Explore how Al can responsibly accelerate information gathering.",
+                objective: "Learn AI techniques for literature search, text analysis, and knowledge synthesis. Explore how AI can responsibly accelerate information gathering.",
                 topics: [
-                    "Lit searches using advanced tools (Elicit and LiteRev)",
-                    "Interactive text categorization & document sorting",
+                    "Literature searches using advanced tools",
+                    "Interactive text categorization and document sorting",
                     "Conducting sentiment scoring on qualitative responses",
                     "Knowledge mapping systems to visualize localized health trends"
                 ],
@@ -775,16 +824,16 @@
                 title: "Module 4: Custom GPTs and Chatbots",
                 objective: "Design and deployment of custom GPT expert agents and context-grounded validation tools.",
                 topics: [
-                    "Context window bounds, data formatting, & RAG workflows",
+                    "Context window bounds, data formatting and RAG workflows",
                     "Instruction prompt design for specific institutional evaluation tasks",
                     "Deploying custom chatbot assistants with integrated Botpress models",
                     "Building localized partner response assistants"
                 ],
-                meMatch: "Allows M&E officers to upload custom donor indicators frameworks (e.g., UNICEF/DFAT) directly into secure companion instances to analyze project success ratios immediately."
+                meMatch: "Allows M&E officers to upload custom donor indicator frameworks directly into secure companion instances to analyze project success ratios immediately."
             },
             5: {
                 title: "Module 5: AI for Task Automation",
-                objective: "Discover practical, responsible strategies for automating repetitive research tasks through Al-driven workflows.",
+                objective: "Discover practical, responsible strategies for automating repetitive research tasks through AI-driven workflows.",
                 topics: [
                     "Constructing multi-app trigger sequences for data monitoring",
                     "Autonomous browser actions and system triggers",
@@ -795,14 +844,14 @@
             },
             6: {
                 title: "Module 6: GenAI for Communication and Outreach",
-                objective: "Explore Al-driven approaches for research dissemination, focusing on creating authentic assets for sharing your findings responsibly.",
+                objective: "Explore AI-driven approaches for research dissemination, focusing on creating authentic assets for sharing findings responsibly.",
                 topics: [
                     "Designing custom figures and structural flow diagrams with prompt generation",
                     "Generating interactive video briefings and abstract briefs",
-                    "Content scheduling structures to dispatch public programs summaries systematically",
+                    "Content scheduling structures to dispatch public program summaries systematically",
                     "Translating scientific materials for diverse local community audiences"
                 ],
-                meMatch: "Converts dense, quantitative, 100-page immunizations reports into localized, visually appealing diagrams and easy-to-follow programmatic explanations."
+                meMatch: "Converts dense, quantitative, 100-page immunization reports into localized, visually appealing diagrams and easy-to-follow programmatic explanations."
             },
             7: {
                 title: "Module 7: Capstone Project & Showcase",
@@ -817,20 +866,7 @@
             }
         };
 
-        // Project Modals Content Matrix
         const submissionProjects = {
-            'week1': {
-                title: "Websites, Documents & Presentations",
-                subtitle: "Module 1 Submission",
-                tech: "Markdown, GPT Canvas, HTML",
-                body: `
-                    <p><strong>Overview:</strong> Built a pristine project landing page to outline specific development goals and indicators. Tested structural layouts using markdown formatting to compile clear documentation guides.</p>
-                    <p><strong>Methodology:</strong> Utilized ChatGPT Canvas systems to draft responsive styles and structured sections. Focused on accessible, mobile-first design suitable for local field workers.</p>
-                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
-                        <span class="text-brand-teal font-semibold">Key Outcome:</span> Unified data presentation interfaces, cutting down formatting overhead for team members by 40%.
-                    </div>
-                `
-            },
             'week2': {
                 title: "Life Expectancy and GDP Report",
                 subtitle: "Module 2 Submission",
@@ -973,9 +1009,9 @@
                         </div>
                     </section>
 
-                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
-                        <h3 class="text-xl font-bold text-white mb-3">8. Interpretation</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Higher GDP per capita often reflects stronger health systems, education, infrastructure, sanitation, and nutrition. However, GDP alone does not explain life expectancy. Policy, inequality, conflict, disease burden, and public health systems also matter.</p>
+                    <section class="interpretation-highlight mb-6">
+                        <h3 class="text-xl font-bold mb-3">8. Interpretation</h3>
+                        <p class="text-sm leading-relaxed">Higher GDP per capita often reflects stronger health systems, education, infrastructure, sanitation, and nutrition. However, GDP alone does not explain life expectancy. Policy, inequality, conflict, disease burden, and public health systems also matter.</p>
                     </section>
 
                     <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
@@ -988,29 +1024,164 @@
                         <p class="text-sm text-slate-400 leading-relaxed">The data show a clear positive relationship between economic development and life expectancy. The strongest view comes from log GDP per capita, with a correlation of <strong>0.83</strong>.</p>
                     </section>
 
-                    <section class="p-6 rounded-2xl bg-gradient-to-br from-brand-teal/10 to-[#081224] border border-brand-teal relative mt-6 shadow-[0_0_15px_rgba(20,184,166,0.15)] overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-teal"></div>
-                        <h3 class="text-xl font-bold text-white mb-3 flex items-center">
-                            <i class="fa-solid fa-lightbulb text-brand-amber mr-3"></i> Personal Reflection
+                    <section class="reflection-highlight mt-6">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fa-solid fa-lightbulb text-brand-teal mr-3"></i> Personal Reflection
                         </h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
+                        <p class="text-sm leading-relaxed">
                             Using AI makes our M&E data analysis easier. It provides quick insights and handles data interpretation well. However, we must still ensure that our data are clean, like how we manually clean our data as M&E practitioners. If we provide these AI tools with messy data, they will give us messy results. Additionally, in addition to ensuring we provide high-quality data, we need to validate the AI's responses to our prompts. This adds a human touch to the AI's work. Lastly, human stories from the ground are just as important as complex analysis provided by our AI companions.
                         </p>
                     </section>
                 `
             },
+
             'week3': {
-                title: "Lit Search & Qualitative Sentiment Mapper",
-                subtitle: "Module 3 Submission",
-                tech: "Elicit, Sentiment Transformers, NLP",
+                title: "Workshop 3: Job Market Data Analysis",
+                subtitle: "Week 3 Submission",
+                tech: "Google Sheets, LLM Extraction, AI Data Analysis, HTML Report",
                 body: `
-                    <p><strong>Overview:</strong> Constructed an automation pipeline to catalog academic references and evaluate public community feedback logs.</p>
-                    <p><strong>Methodology:</strong> Implemented semantic classification algorithms using custom prompt hierarchies to sort text into functional categories (risk, support, inquiries).</p>
-                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
-                        <span class="text-brand-teal font-semibold">Validation Metric:</span> Processed unstructured qualitative data in minutes, matching manual verification accuracy with a 95% time saving.
+                    <div class="mb-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-amber bg-[#12203b] text-xs font-bold text-slate-300 mb-4 shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                            <span class="w-3 h-3 rounded-full bg-brand-amber shadow-[0_0_10px_rgba(245,158,11,0.5)]"></span>
+                            Workshop 3 Project Report
+                        </div>
+                        <h2 class="font-heading font-extrabold text-3xl text-white mb-4">
+                            Data Analyst <span class="text-brand-amber">Job Market Analysis</span>
+                        </h2>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-3xl">
+                            This report summarizes a sample of data analyst job postings, focusing on how minimum experience requirements and listed data-language skills relate to median salary estimates.
+                        </p>
                     </div>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">1. Project Overview</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            For this project, I used LLMs in Google Sheets to extract information from job postings, then analyzed the data with AI tools to explore relationships between experience requirements, programming languages, and salaries. The analysis uses cleaned numeric salary and experience fields, with non-numeric extraction failures excluded from the relevant visualizations.
+                        </p>
+                    </section>
+
+                    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Job postings</p>
+                            <strong class="text-2xl font-bold text-brand-teal">400</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Scatter rows</p>
+                            <strong class="text-2xl font-bold text-brand-amber">310</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Box plot rows</p>
+                            <strong class="text-2xl font-bold text-white">400</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Experience-salary corr.</p>
+                            <strong class="text-2xl font-bold text-brand-teal">0.03</strong>
+                        </div>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6 overflow-x-auto">
+                        <h3 class="text-xl font-bold text-white mb-3">2. Salary Summary by Data-Language Category</h3>
+                        <table class="dash-table w-full text-sm text-slate-300">
+                            <thead>
+                                <tr>
+                                    <th>Data Languages</th>
+                                    <th>Postings</th>
+                                    <th>Median Salary</th>
+                                    <th>Mean Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>R</td>
+                                    <td>13</td>
+                                    <td>$68k</td>
+                                    <td>$66k</td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>62</td>
+                                    <td>$69k</td>
+                                    <td>$74k</td>
+                                </tr>
+                                <tr>
+                                    <td>Both</td>
+                                    <td>69</td>
+                                    <td>$68k</td>
+                                    <td>$76k</td>
+                                </tr>
+                                <tr>
+                                    <td>Neither</td>
+                                    <td>256</td>
+                                    <td>$68k</td>
+                                    <td>$70k</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">3. Years of Experience Analysis</h3>
+                        <p class="text-sm text-slate-400 mb-5 leading-relaxed">
+                            The scatter plot shows minimum years of experience on the x-axis and median salary estimate on the y-axis.
+                        </p>
+
+                        <img 
+                            src="https://github.com/nicorastrullo/graph-ai-portfolio/blob/main/Years%20of%20Experience%20Analysis.png?raw=true" 
+                            alt="Scatter plot showing minimum years of experience versus median salary estimate"
+                            class="w-full rounded-xl border border-[#223a57] mt-2 mb-5 shadow-[0_0_15px_rgba(20,184,166,0.15)]"
+                        >
+
+                        <div class="interpretation-highlight">
+                            <p class="text-sm leading-relaxed">
+                                <strong>Interpretation:</strong>
+                                The relationship between minimum experience and salary is weak in this sample, with a correlation of approximately 0.03. Most postings cluster around 1 to 5 years of experience and $50k to $80k in median salary. Several high-salary outliers appear across different experience levels, rather than only among postings requiring the most experience.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">4. Programming Language Analysis</h3>
+                        <p class="text-sm text-slate-400 mb-5 leading-relaxed">
+                            The box plot compares median salary estimates across four data-language categories: R, Python, Both, and Neither.
+                        </p>
+
+                        <img 
+                            src="https://github.com/nicorastrullo/graph-ai-portfolio/blob/main/Programming%20Language%20Analysis.png?raw=true" 
+                            alt="Box plot showing median salary estimate grouped by data-language category"
+                            class="w-full rounded-xl border border-[#223a57] mt-2 mb-5 shadow-[0_0_15px_rgba(245,158,11,0.15)]"
+                        >
+
+                        <div class="interpretation-highlight">
+                            <p class="text-sm leading-relaxed">
+                                <strong>Interpretation:</strong>
+                                Median salaries are similar across language categories, with all groups centered near $68k to $69k. Postings mentioning both R and Python show one of the wider salary ranges and the highest average salary in this sample. The R-only group appears comparatively tighter, with fewer high-end outliers.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">5. Limitations</h3>
+                        <div class="p-5 rounded-xl bg-amber-500/10 border border-brand-amber/40">
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Because this report uses a small sample of job postings, the findings should be viewed as general patterns rather than definitive conclusions about the full data analyst job market.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="reflection-highlight mt-6">
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fa-solid fa-lightbulb text-brand-teal mr-3"></i> Personal Reflection
+                        </h3>
+                        <p class="text-sm leading-relaxed mb-4">
+                            I had a great time using LLMs in Google Sheets because they made my data cleaning work more efficient. Extracting details such as salary estimates, minimum years of experience, and programming language requirements from unstructured and bulky texts became easier with AI support.
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            AI was also useful as a reporting tool, especially for visualization and written interpretation. It helped turn the analysis into a clear summary and showed me how AI can be useful when dealing with a large volume of data. However, this project also reminded me that human review is still important, especially in checking whether LLM-powered Excel prompts and formulas are producing accurate and responsible results.
+                        </p>
+                    </section>
                 `
             },
+
             'week4': {
                 title: "Custom GPT M&E Reporting Companion",
                 subtitle: "Module 4 Submission",
@@ -1023,6 +1194,7 @@
                     </div>
                 `
             },
+
             'week5': {
                 title: "Multi-App Agent Automation Loops",
                 subtitle: "Module 5 Submission",
@@ -1032,15 +1204,17 @@
                     <p><strong>Goal:</strong> Send instant validation report digests to team leads when low vaccination coverage rates are registered, bypassing manual coordination pipelines entirely.</p>
                 `
             },
+
             'week6': {
                 title: "GenAI Communication Outreach",
                 subtitle: "Module 6 Submission",
                 tech: "Flowchart Tools, Text-to-Speech, Media Generation",
                 body: `
-                    <p><strong>Overview:</strong> Formulating an outreach suite translating technical data into engaging, accessible content (diagrams, audio summaries).</p>
+                    <p><strong>Overview:</strong> Formulating an outreach suite translating technical data into engaging, accessible content including diagrams and audio summaries.</p>
                     <p><strong>Goal:</strong> Maximize stakeholder confidence and community trust through highly accessible and transparent project monitoring updates.</p>
                 `
             },
+
             'capstone': {
                 title: "Unified M&E Agent Validation Hub",
                 subtitle: "Capstone Project Briefing",
@@ -1052,18 +1226,16 @@
                         <li>Automatic ingestion of CSV datasets from partner organization reports.</li>
                         <li>Automated cleaning and outlier detection.</li>
                         <li>Intelligent text scanning to flag critical community complaints.</li>
-                        <li>Dynamic, automated PDF progress reports generated instantly for executive partners (UNICEF/DFAT).</li>
+                        <li>Dynamic, automated PDF progress reports generated instantly for executive partners.</li>
                     </ul>
                 `
             }
         };
 
-        // Initialize Module display on load
         window.onload = function() {
             switchModule(1);
         }
 
-        // Toggle Module Tab logic
         function switchModule(moduleId) {
             const tabsContainer = document.getElementById('module-tabs');
             const buttons = tabsContainer.getElementsByTagName('button');
@@ -1119,7 +1291,6 @@
             `;
         }
 
-        // Project Inspection Modal Logic
         function openModal(projectId) {
             const project = submissionProjects[projectId];
             if (!project) return;
@@ -1132,7 +1303,7 @@
             const modal = document.getElementById('project-modal');
             const container = document.getElementById('modal-container-element');
 
-            if (projectId === 'week2' || projectId === 'capstone') {
+            if (projectId === 'week2' || projectId === 'week3' || projectId === 'capstone') {
                 container.className = "relative w-full max-w-5xl bg-[#0c1a31] border border-[#223a57] rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
             } else {
                 container.className = "relative w-full max-w-2xl bg-[#0c1a31] border border-[#223a57] rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
