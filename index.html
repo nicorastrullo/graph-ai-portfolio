@@ -129,6 +129,118 @@
         .reflection-highlight .label {
             color: #14b8a6;
         }
+
+        .agency-metric-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agency-metric-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(20,184,166,.12), transparent 42%, rgba(245,158,11,.10));
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .agency-metric-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .65rem .9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(34, 58, 87, .9);
+            background: rgba(18, 32, 59, .65);
+            color: #cbd5e1;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .02em;
+            box-shadow: 0 8px 25px rgba(0,0,0,.18);
+        }
+
+        .service-pill i {
+            color: #14b8a6;
+        }
+
+        .process-card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(18, 32, 59, 0.55);
+            border: 1px solid rgba(34, 58, 87, 0.85);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .process-card::after {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -40%;
+            width: 180px;
+            height: 180px;
+            border-radius: 999px;
+            background: rgba(20,184,166,.08);
+            filter: blur(4px);
+        }
+
+        .process-number {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: .9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(20,184,166,.25), rgba(59,130,246,.18));
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            border: 1px solid rgba(20,184,166,.35);
+        }
+
+        .faq-card {
+            background: rgba(18, 32, 59, .55);
+            border: 1px solid rgba(34,58,87,.85);
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+        }
+
+        .faq-card summary {
+            cursor: pointer;
+            color: #f8fafc;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .faq-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-card summary::after {
+            content: "+";
+            float: right;
+            color: #14b8a6;
+            font-weight: 800;
+        }
+
+        .faq-card[open] summary::after {
+            content: "–";
+            color: #f59e0b;
+        }
+
+        .cta-panel {
+            background:
+                radial-gradient(circle at 15% 15%, rgba(20,184,166,.18), transparent 28%),
+                radial-gradient(circle at 85% 25%, rgba(245,158,11,.15), transparent 30%),
+                linear-gradient(135deg, rgba(18,32,59,.92), rgba(8,18,36,.96));
+            border: 1px solid rgba(34,58,87,.9);
+            box-shadow: 0 24px 60px rgba(0,0,0,.28);
+        }
+
     </style>
 </head>
 
@@ -152,10 +264,12 @@
                 </div>
 
                 <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-300">
+                    <a href="#ai-me-rationale" class="hover:text-brand-teal transition-colors">Why integrate M&amp;E with AI?</a>
                     <a href="#about" class="hover:text-brand-teal transition-colors">About Me</a>
                     <a href="#skills" class="hover:text-brand-teal transition-colors">Skills Matrix</a>
                     <a href="#course" class="hover:text-brand-teal transition-colors">GenAI Course</a>
                     <a href="#submissions" class="hover:text-brand-teal transition-colors">Weekly Submissions</a>
+                    <a href="#workflow" class="hover:text-brand-teal transition-colors">Workflow</a>
                     <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-teal hover:bg-brand-darkTeal text-white font-semibold transition-all shadow-md shadow-teal-900/40">
                         Get In Touch
                     </a>
@@ -170,10 +284,12 @@
         </div>
         
         <div id="mobile-menu" class="hidden md:hidden bg-[#0c1a31] border-b border-[#223a57] px-4 py-4 space-y-3 transition-all duration-300">
+            <a href="#ai-me-rationale" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Why integrate M&amp;E with AI?</a>
             <a href="#about" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">About Me</a>
             <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Skills Matrix</a>
             <a href="#course" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">GenAI Course</a>
             <a href="#submissions" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Weekly Submissions</a>
+            <a href="#workflow" class="block py-2 text-slate-300 hover:text-brand-teal font-medium" onclick="toggleMobileMenu()">Workflow</a>
             <a href="#contact" class="block py-3 text-center rounded-xl bg-brand-teal text-white font-semibold shadow-md" onclick="toggleMobileMenu()">
                 Get In Touch
             </a>
@@ -218,20 +334,27 @@
                 </a>
             </div>
 
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span class="service-pill"><i class="fa-solid fa-layer-group"></i> Project Card Layout</span>
+                <span class="service-pill"><i class="fa-solid fa-mobile-screen"></i> Responsive Interface</span>
+                <span class="service-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> AI-Assisted Reports</span>
+                <span class="service-pill"><i class="fa-solid fa-chart-pie"></i> Data Storytelling</span>
+            </div>
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 p-6 rounded-2xl bg-[#12203b]/50 border border-[#223a57]/80 backdrop-blur-md">
-                <div class="text-center p-3 border-r border-[#223a57]/80 last:border-0">
+                <div class="agency-metric-card text-center p-3 border-r border-[#223a57]/80 last:border-0">
                     <p class="text-3xl font-extrabold text-brand-teal font-heading">5+ Years</p>
                     <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">M&amp;E and Project Management Experience</p>
                 </div>
-                <div class="text-center p-3 border-r border-[#223a57]/80 last:border-0">
+                <div class="agency-metric-card text-center p-3 border-r border-[#223a57]/80 last:border-0">
                     <p class="text-3xl font-extrabold text-white font-heading">USD 15M+</p>
                     <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Managed Portfolio</p>
                 </div>
-                <div class="text-center p-3 border-r border-[#223a57]/80 last:border-0">
+                <div class="agency-metric-card text-center p-3 border-r border-[#223a57]/80 last:border-0">
                     <p class="text-3xl font-extrabold text-brand-amber font-heading">8 Weeks</p>
                     <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Applied GenAI Cohort</p>
                 </div>
-                <div class="text-center p-3">
+                <div class="agency-metric-card text-center p-3">
                     <p class="text-3xl font-extrabold text-indigo-400 font-heading">100%</p>
                     <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Indicator Compliance</p>
                 </div>
@@ -239,7 +362,69 @@
         </div>
     </header>
 
-    <section id="about" class="py-24 bg-[#0c1a31]/60 relative border-t border-[#223a57]">
+    <section id="ai-me-rationale" class="py-20 bg-[#081224] border-t border-[#223a57] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="cta-panel rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-brand-amber font-semibold text-sm tracking-wider uppercase">AI + M&amp;E Integration Rationale</span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">Why integrate M&amp;E with AI?</h2>
+                        <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+                            Integrating artificial intelligence with Monitoring and Evaluation helps humanitarian and development teams move from slow, manual reporting cycles toward faster, more responsive evidence systems. AI can support data cleaning, text analysis, risk flagging, summarization, and reporting while M&amp;E practice keeps the work grounded in accountability, ethics, context, and human judgment.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <span class="service-pill"><i class="fa-solid fa-database"></i> Cleaner data flows</span>
+                            <span class="service-pill"><i class="fa-solid fa-chart-line"></i> Faster insight generation</span>
+                            <span class="service-pill"><i class="fa-solid fa-hand-holding-heart"></i> Human-centered accountability</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="process-card">
+                            <div class="relative z-10">
+                                <div class="process-number mb-4">01</div>
+                                <h3 class="font-heading font-bold text-white mb-2">Faster Evidence Processing</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">AI can help process large volumes of spreadsheets, field notes, reports, and feedback forms so M&amp;E teams can focus more on interpretation and action.</p>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <div class="relative z-10">
+                                <div class="process-number mb-4">02</div>
+                                <h3 class="font-heading font-bold text-white mb-2">Stronger Data Validation</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">AI-assisted checks can flag missing values, unusual patterns, inconsistent entries, and reporting gaps for human review before findings are shared.</p>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <div class="relative z-10">
+                                <div class="process-number mb-4">03</div>
+                                <h3 class="font-heading font-bold text-white mb-2">Humanitarian Decision Support</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">Integrated systems can surface urgent community feedback, risk signals, access issues, and service delivery concerns more quickly across project sites.</p>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <div class="relative z-10">
+                                <div class="process-number mb-4">04</div>
+                                <h3 class="font-heading font-bold text-white mb-2">Better Reporting &amp; Learning</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">AI can convert raw monitoring data into donor updates, dashboards, summaries, and plain-language learning products for partners and communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-6 rounded-2xl bg-[#081224]/75 border border-[#223a57]">
+                    <h3 class="font-heading font-bold text-white text-lg mb-3 flex items-center">
+                        <i class="fa-solid fa-shield-halved text-brand-teal mr-3"></i>
+                        Responsible Use in Humanitarian and Development Projects
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Integrated AI and M&amp;E systems can improve project responsiveness by helping teams consolidate partner reports, classify community feedback, monitor indicators, and prepare timely evidence for decisions. However, AI outputs must always be validated by people who understand the project context, affected communities, data limitations, and ethical risks. The goal is not to replace M&amp;E professionals, but to strengthen transparency, accountability, inclusion, and evidence-based action.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="about" class="py-24 bg-[#0c1a31]/60 relative border-t border-[#223a57]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 
@@ -359,8 +544,7 @@
             </div>
         </div>
     </section>
-
-    <section id="skills" class="py-24 relative overflow-hidden bg-[#0B132B]">
+<section id="skills" class="py-24 relative overflow-hidden bg-[#0B132B]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-brand-amber font-semibold text-sm tracking-wider uppercase">Strategic Toolkit</span>
@@ -511,6 +695,7 @@
             </div>
         </div>
     </section>
+
 
     <section id="submissions" class="py-24 bg-[#0c1a31] border-t border-[#223a57]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -668,6 +853,84 @@
         </div>
     </section>
 
+    <section id="workflow" class="py-24 bg-[#081224] border-t border-[#223a57] relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(20,184,166,.09),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(245,158,11,.08),transparent_28%)]"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-teal font-semibold text-sm tracking-wider uppercase">Portfolio Workflow</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2">M&amp;E and Data Analysis Workflow</h2>
+                <p class="text-sm text-slate-400 mt-4 leading-relaxed">
+                    This workflow shows how each portfolio output moves from monitoring questions and indicators into cleaned data, analysis, interpretation, and reflection. AI is used as a support tool for extraction, organization, visualization, and reporting, while M&amp;E judgment remains central to validation and learning.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-5 mb-14">
+                <div class="process-card">
+                    <div class="relative z-10">
+                        <div class="process-number mb-4">1</div>
+                        <h3 class="font-heading font-bold text-white mb-2">Define Indicators</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Clarify the monitoring question, target indicators, data sources, and decision needs before starting analysis.</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="relative z-10">
+                        <div class="process-number mb-4">2</div>
+                        <h3 class="font-heading font-bold text-white mb-2">Prepare Data</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Clean, structure, and validate datasets, job postings, reports, or field records so they are ready for reliable analysis.</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="relative z-10">
+                        <div class="process-number mb-4">3</div>
+                        <h3 class="font-heading font-bold text-white mb-2">Analyze Patterns</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Use statistics, comparisons, visualizations, and AI-assisted exploration to identify trends, gaps, and relationships.</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="relative z-10">
+                        <div class="process-number mb-4">4</div>
+                        <h3 class="font-heading font-bold text-white mb-2">Interpret Evidence</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Connect findings to project performance, implementation context, limitations, and practical implications for stakeholders.</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="relative z-10">
+                        <div class="process-number mb-4">5</div>
+                        <h3 class="font-heading font-bold text-white mb-2">Reflect &amp; Validate</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Check AI outputs, document assumptions, identify limitations, and reflect on what the analysis means for learning and accountability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <details class="faq-card">
+                    <summary>How does this workflow follow M&amp;E practice?</summary>
+                    <p class="text-sm text-slate-400 leading-relaxed mt-4">
+                        The workflow begins with indicators, data sources, and decision needs. This mirrors practical M&amp;E work, where analysis should be connected to project objectives, performance questions, and evidence use.
+                    </p>
+                </details>
+                <details class="faq-card">
+                    <summary>Where does data analysis fit in?</summary>
+                    <p class="text-sm text-slate-400 leading-relaxed mt-4">
+                        Data analysis is used after preparation and validation. The portfolio reports use summaries, charts, correlations, comparisons, and visual evidence to convert raw information into understandable findings.
+                    </p>
+                </details>
+                <details class="faq-card">
+                    <summary>How is AI used responsibly?</summary>
+                    <p class="text-sm text-slate-400 leading-relaxed mt-4">
+                        AI supports extraction, cleaning, visualization, and reporting, but the results still require human review. This is important because project context, data quality, ethics, and limitations cannot be delegated fully to AI.
+                    </p>
+                </details>
+                <details class="faq-card">
+                    <summary>Why separate interpretation and reflection?</summary>
+                    <p class="text-sm text-slate-400 leading-relaxed mt-4">
+                        Interpretation explains what the data suggests for project learning or decision-making. Reflection explains how the workflow was done, what AI contributed, and what needed validation or caution.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-24 bg-[#081224] relative border-t border-[#223a57]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -744,6 +1007,7 @@
             <div class="flex space-x-6 text-sm text-slate-500">
                 <a href="#about" class="hover:text-brand-teal">Background</a>
                 <a href="#course" class="hover:text-brand-teal">Syllabus</a>
+                <a href="#workflow" class="hover:text-brand-teal">Workflow</a>
                 <a href="#submissions" class="hover:text-brand-teal">Weekly Work</a>
             </div>
             <div class="text-xs text-slate-600">
