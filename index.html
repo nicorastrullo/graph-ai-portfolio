@@ -1016,27 +1016,27 @@
                     </div>
                 </div>
 
-                <div class="artifact-card flex flex-col justify-between">
+                <div class="artifact-card highlight-amber flex flex-col justify-between">
                     <div>
                         <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                             <div class="artifact-eyebrow"><i class="fa-solid fa-comments text-indigo-400"></i> Week 4 Submission</div>
-                            <span class="artifact-status review"><i class="fa-solid fa-hourglass-half"></i> In Review</span>
+                            <span class="artifact-status completed"><i class="fa-solid fa-circle-check"></i> Completed</span>
                         </div>
-                        <h4 class="font-heading font-bold text-lg text-white mb-3">Custom GPT M&amp;E Companion</h4>
+                        <h4 class="font-heading font-bold text-lg text-white mb-3">Embedded M&amp;E Chatbot Assistant</h4>
                         <p class="text-xs text-slate-400 leading-relaxed mb-5">
-                            Engineered an exclusive custom GPT with specific guidance prompts to evaluate local development projects against UNICEF reporting standard metrics.
+                            Showcases the Botpress chatbot embedded in this portfolio as an interactive AI assistant for M&amp;E support, project navigation, and portfolio-related questions.
                         </p>
 
                         <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="service-pill"><i class="fa-solid fa-robot"></i> Custom GPT</span>
-                            <span class="service-pill"><i class="fa-solid fa-shield-halved"></i> RAG structure</span>
+                            <span class="service-pill"><i class="fa-solid fa-robot"></i> Botpress Webchat</span>
+                            <span class="service-pill"><i class="fa-solid fa-message"></i> Interactive output</span>
                         </div>
                     </div>
 
                     <div class="artifact-meta-panel mt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Framework: GPTs, RAG Structure</span>
-                        <button onclick="openModal('week4')" class="artifact-action">
-                            <span>Inspect Project</span>
+                        <span class="text-[11px] uppercase tracking-wider text-brand-teal font-semibold">Framework: Botpress Webchat</span>
+                        <button onclick="openModal('week4')" class="artifact-action amber">
+                            <span>Open Output</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
@@ -1727,15 +1727,75 @@
             },
 
             'week4': {
-                title: "Custom GPT M&E Reporting Companion",
-                subtitle: "Module 4 Submission",
-                tech: "GPT Builder, System Prompts, RAG Models",
+                title: "Embedded M&E Chatbot Assistant",
+                subtitle: "Week 4 Submission",
+                tech: "Botpress Webchat, Custom Instructions, M&E Support Workflow",
                 body: `
-                    <p><strong>Overview:</strong> Designed and deployed a secure custom GPT agent programmed to review program reporting data against strict global compliance parameters.</p>
-                    <p><strong>Methodology:</strong> Uploaded indicator guidelines as base documentation. Tuned prompt constraints to prevent hallucinations and maintain analytical accuracy.</p>
-                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
-                        <span class="text-indigo-400 font-semibold">Integration Detail:</span> Acts as an automated junior evaluator, offering immediate, standardized assessments of partner performance reports.
+                    <div class="mb-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-teal bg-[#12203b] text-xs font-bold text-slate-300 mb-4 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
+                            <span class="w-3 h-3 rounded-full bg-brand-teal shadow-[0_0_10px_rgba(20,184,166,0.5)]"></span>
+                            Live Chatbot Showcase
+                        </div>
+                        <h2 class="font-heading font-extrabold text-3xl text-white mb-4">
+                            Week 4 Output: <span class="text-brand-teal">Embedded M&amp;E Chatbot</span>
+                        </h2>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-3xl">
+                            This submission showcases the chatbot already embedded in the portfolio using Botpress Webchat. The chatbot serves as an interactive assistant that can guide visitors through the portfolio, explain the M&amp;E and AI integration focus, and support questions related to the project outputs.
+                        </p>
                     </div>
+
+                    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Output Type</p>
+                            <strong class="text-lg font-bold text-brand-teal">Chatbot</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Platform</p>
+                            <strong class="text-lg font-bold text-brand-amber">Botpress</strong>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#12203b]/80 border border-[#223a57] shadow-lg">
+                            <p class="text-xs text-slate-500 mb-1">Status</p>
+                            <strong class="text-lg font-bold text-emerald-400">Embedded</strong>
+                        </div>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">1. Chatbot Output</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                            The chatbot is integrated directly into the website through the Botpress webchat scripts in the HTML header. Visitors can use the floating chat widget to ask questions about the portfolio, the submitted outputs, and how AI can support Monitoring and Evaluation workflows.
+                        </p>
+                        <div class="p-5 rounded-2xl bg-[#081224]/75 border border-[#223a57]">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-teal/15 text-brand-teal flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-white mb-2">Portfolio Chatbot Assistant</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                        Use the chatbot as the Week 4 project output. It demonstrates how a conversational assistant can make a portfolio more interactive while connecting GenAI tools with M&amp;E communication, reporting, and learning use cases.
+                                    </p>
+                                    <button onclick="launchWeek4Chatbot()" class="artifact-action amber">
+                                        <span>Launch Chatbot</span>
+                                        <i class="fa-solid fa-comment-dots text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="p-6 rounded-2xl bg-[#12203b]/60 border border-[#223a57] mb-6">
+                        <h3 class="text-xl font-bold text-white mb-3">2. M&amp;E Relevance</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            The chatbot demonstrates how AI assistants can support stakeholder communication, project navigation, knowledge sharing, and rapid access to information. In an M&amp;E setting, this type of assistant can help users understand indicators, reporting outputs, dashboards, limitations, and learning products more quickly.
+                        </p>
+                    </section>
+
+                    <section class="interpretation-highlight">
+                        <h3 class="text-xl font-bold mb-3">3. Interpretation</h3>
+                        <p class="text-sm leading-relaxed">
+                            <strong>Interpretation:</strong> The chatbot is not only a technical feature; it is also a communication and accessibility tool. It helps transform static portfolio content into an interactive experience where users can ask questions, explore outputs, and understand how AI can support M&amp;E practice.
+                        </p>
+                    </section>
                 `
             },
 
@@ -1847,7 +1907,7 @@
             const modal = document.getElementById('project-modal');
             const container = document.getElementById('modal-container-element');
 
-            if (projectId === 'week2' || projectId === 'week3' || projectId === 'capstone') {
+            if (projectId === 'week2' || projectId === 'week3' || projectId === 'week4' || projectId === 'capstone') {
                 container.className = "relative w-full max-w-5xl bg-[#0c1a31] border border-[#223a57] rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
             } else {
                 container.className = "relative w-full max-w-2xl bg-[#0c1a31] border border-[#223a57] rounded-3xl overflow-hidden shadow-2xl transition-all duration-300";
@@ -1861,6 +1921,41 @@
             const modal = document.getElementById('project-modal');
             modal.classList.add('hidden');
             document.body.classList.remove('overflow-hidden'); 
+        }
+
+        function launchWeek4Chatbot() {
+            if (typeof closeModal === 'function') {
+                closeModal();
+            }
+
+            let opened = false;
+
+            try {
+                if (window.botpress && typeof window.botpress.open === 'function') {
+                    window.botpress.open();
+                    opened = true;
+                } else if (window.botpress && typeof window.botpress.toggle === 'function') {
+                    window.botpress.toggle();
+                    opened = true;
+                } else if (window.botpressWebChat && typeof window.botpressWebChat.sendEvent === 'function') {
+                    window.botpressWebChat.sendEvent({ type: 'show' });
+                    opened = true;
+                }
+            } catch (error) {
+                opened = false;
+            }
+
+            const notifBox = document.getElementById('notif-box');
+            const notifText = document.getElementById('notif-text');
+            if (notifBox && notifText) {
+                notifText.innerHTML = opened
+                    ? 'The Week 4 chatbot output is now open.'
+                    : 'The chatbot may still be loading. Please use the chat icon at the bottom-right of the page.';
+                notifBox.classList.remove('hidden');
+                setTimeout(() => {
+                    notifBox.classList.add('hidden');
+                }, 5500);
+            }
         }
 
         function handleFormSubmit(event) {
